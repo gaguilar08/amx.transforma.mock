@@ -1,4 +1,4 @@
-package com.zerotoproduction.firstrest;
+package mx.com.amx.transforma.mock;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

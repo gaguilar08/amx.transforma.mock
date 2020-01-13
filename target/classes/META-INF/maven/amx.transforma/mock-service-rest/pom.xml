@@ -9,7 +9,7 @@
 		<version>2.1.2.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	
+
 	<groupId>amx.transforma</groupId>
 	<artifactId>mock-service-rest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -31,6 +31,17 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20190722</version>
+		</dependency>
+
+
+
+
 	</dependencies>
 
 	<build>

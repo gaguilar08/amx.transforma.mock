@@ -1,4 +1,4 @@
-package com.zerotoproduction.firstrest;
+package mx.com.amx.transforma.mock;
 
 public class BucketList {
 

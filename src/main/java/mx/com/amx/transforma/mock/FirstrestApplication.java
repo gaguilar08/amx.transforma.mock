@@ -1,4 +1,4 @@
-package com.zerotoproduction.firstrest;
+package mx.com.amx.transforma.mock;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
