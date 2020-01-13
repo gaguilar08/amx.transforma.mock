@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
+@RequestMapping("/api/v1")
 public class BucketListController {
 
     private List<BucketList> myBucketList = new ArrayList();
