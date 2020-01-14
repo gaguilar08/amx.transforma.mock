@@ -13,14 +13,12 @@ public class Delivery {
 	private LocalDate fechaCompromiso;
 	private LocalDate fechaInicio;	
 	private LocalDate fechaFin;	
-	private String usuario;
 	private List AnotacionesDelivery;
 	
 	
 
 	public Delivery(String noSolicitud, String proyecto, String cID, String estado, String tipo, String tipoServicio,
-			LocalDate fechaCompromiso, LocalDate fechaInicio, LocalDate fechaFin, String usuario,
-			List anotacionesDelivery) {
+			LocalDate fechaCompromiso, LocalDate fechaInicio, LocalDate fechaFin, List anotacionesDelivery) {
 		super();
 		this.noSolicitud = noSolicitud;
 		this.proyecto = proyecto;
@@ -31,7 +29,6 @@ public class Delivery {
 		this.fechaCompromiso = fechaCompromiso;
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
-		this.usuario = usuario;
 		AnotacionesDelivery = anotacionesDelivery;
 	}
 	public String getNoSolicitud() {
@@ -87,12 +84,6 @@ public class Delivery {
 	}
 	public void setFechaFin(LocalDate fechaFin) {
 		this.fechaFin = fechaFin;
-	}
-	public String getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
 	}
 	public List getAnotacionesDelivery() {
 		return AnotacionesDelivery;

@@ -65,20 +65,20 @@ public class IMockServiceImpl implements IMockService {
 
 		List<AnotacionesDelivery> list_ad1 = new ArrayList<>();
 		AnotacionesDelivery ad1 = new AnotacionesDelivery("Agenda cuadrilla configurable",
-				"No se verifica los entregables Gráfico y SCR. Regularizar");
+				"No se verifica los entregables Gráfico y SCR. Regularizar", "E3003053", parsedDate);
 		list_ad1.add(ad1);
 		Delivery de1 = new Delivery("33990215", "0005774368", "9963689", "Atendida", "TRASLADO EXTERNO",
-				"Red Privada Virtual Full Mesh", parsedDate, parsedDate, parsedDate, "E3003053", list_ad1);
+				"Red Privada Virtual Full Mesh", parsedDate, parsedDate, parsedDate, list_ad1);
 
 		List<AnotacionesDelivery> list_ad2 = new ArrayList<>();
 		AnotacionesDelivery ad2_1 = new AnotacionesDelivery("GIS Instalación PEX",
-				"Cierre masivo por auditoría interna");
+				"Cierre masivo por auditoría interna","C14591", parsedDate);
 		AnotacionesDelivery ad2_2 = new AnotacionesDelivery("Agenda cuadrilla configurable",
-				"No se verifica los entregables Gráfico y SCR. Regularizar");
+				"No se verifica los entregables Gráfico y SCR. Regularizar","C14591", parsedDate);
 		list_ad2.add(ad2_1);
 		list_ad2.add(ad2_2);
 		Delivery de2 = new Delivery("29671410", "0005137929", "7977765", "Cerrada", "INSTALACION",
-				"Red Privada Virtual Full Mesh", parsedDate, parsedDate, parsedDate, "C14591", list_ad2);
+				"Red Privada Virtual Full Mesh", parsedDate, parsedDate, parsedDate, list_ad2);
 
 		List<AnotacionesDelivery> list_ad3 = new ArrayList<>();
 		AnotacionesDelivery ad3 = new AnotacionesDelivery("Activación /Desactivación del servicio",
@@ -173,13 +173,12 @@ public class IMockServiceImpl implements IMockService {
 				" \r\n" + 
 				"Saludos cordiales\r\n" + 
 				"\"\r\n" + 
-				"");
+				"", "E3003053", parsedDate);
 		list_ad3.add(ad3);
 		Delivery de3 = new Delivery("34177596", "5846557", "8020069", "Cerrada", "RENOVACION DE CONTRATO",
-				"Acceso Dedicado a Internet", parsedDate, parsedDate, parsedDate, "E3003053", list_ad3);
+				"Acceso Dedicado a Internet", parsedDate, parsedDate, parsedDate, list_ad3);
 
 							
-
 		listDelivery.add(de1);
 		listDelivery.add(de2);
 		listDelivery.add(de3);

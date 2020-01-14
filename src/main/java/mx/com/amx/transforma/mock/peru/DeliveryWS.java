@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import mx.com.amx.transforma.mock.dto.Delivery;
+import mx.com.amx.transforma.mock.dto.RequestBodyDelivery;
 import mx.com.amx.transforma.mock.dto.RequestBodyDisponibilidad;
 import mx.com.amx.transforma.mock.service.IMockServiceImpl;
 
@@ -27,26 +28,19 @@ public class DeliveryWS {
 	}
 
 	@PostMapping
-	public List<Delivery> cnfMockServicePost(@RequestBody RequestBodyDisponibilidad parametro) {
+	public List<Delivery> cnfMockServicePost(@RequestBody RequestBodyDelivery parametro) {
 
 		List<Delivery> response = new ArrayList<>();
+		
+		response = mockServiceImpl.buscarSOT();
 
-		if (parametro != null && parametro.getCentro() != null && parametro.getCentro() != ""
-				&& parametro.getAlmacen() != null && parametro.getAlmacen() != "" && parametro.getMaterial() != null
-				&& parametro.getMaterial() != "") {
 
-			response = mockServiceImpl.buscarSOT();
-		} else {
-			Delivery dv1 = new Delivery("Error", null, null, null, null, null, null, null, null, null, null);
-			response.add(dv1);
-		}
-
-		System.out.println("Centro: " + parametro.getCentro());
-		System.out.println("Almacen: " + parametro.getAlmacen());
-		System.out.println("Material: " + parametro.getMaterial());
-		System.out.println("Batch: " + parametro.getBatch());
-		System.out.println("Regla: " + parametro.getRegla());
-		System.out.println("Unidad Medida: " + parametro.getUnidadMedida());
+		System.out.println("idOportunidad: " + 	parametro.getIdOportunidad());
+		System.out.println("IdPropuesta: " + 	parametro.getIdPropuesta());
+		System.out.println("IdCotizacion: " + 	parametro.getIdCotizacion());
+		System.out.println("codProyecto: " + 	parametro.getCodProyecto());
+		System.out.println("CID: " + 			parametro.getCID());
+		System.out.println("nroSolicitud: " + 	parametro.getNroSolicitud());
 
 		return response;
 	}
