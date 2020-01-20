@@ -1,5 +1,7 @@
 package mx.com.amx.transforma.mock.peru;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,11 @@ public class ConsultaReclamoWS {
 
 	@Autowired
 	IMockServiceImpl mockServiceImpl;
+	
+	LocalDate date = LocalDate.now();
+	String text = date.format(DateTimeFormatter.ISO_LOCAL_DATE);
+	LocalDate parsedDate = LocalDate.parse(text, DateTimeFormatter.ISO_LOCAL_DATE);
+
 
 	@GetMapping
 	public String cnfMockService() {
@@ -31,13 +38,14 @@ public class ConsultaReclamoWS {
 
 		List<Reclamo> response = new ArrayList<Reclamo>();
 
-		if (parametro != null && (parametro.getCustomerID() != null && parametro.getCustomerID() != "")) {
+		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente() != "")) {
 			response = mockServiceImpl.consultaReclamo();
 		} else {
-			Reclamo re1 = new Reclamo("El IdCliente es obligatorio", null, null, null, null, null, null, null, null, null, null, null, null);
+			Reclamo re1 = new Reclamo(null, parsedDate, "Error", "El IdCliente es obligatorio");
+			response.add(re1);
 		}
 
-		System.out.println("IdCliente: " + parametro.getCustomerID());
+		System.out.println("IdCliente: " + parametro.getCodigoCliente());
 
 		return response;
 	}

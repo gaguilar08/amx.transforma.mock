@@ -1,6 +1,7 @@
 package mx.com.amx.transforma.mock.dto;
 
 public class RequestBodyDelivery {
+
 	private String idOportunidad;	// 72346796324
 	private String IdPropuesta;		// 26853482425
 	private String IdCotizacion;	// 873283

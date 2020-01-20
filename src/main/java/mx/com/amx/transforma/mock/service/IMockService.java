@@ -5,6 +5,7 @@ import java.util.List;
 import mx.com.amx.transforma.mock.dto.Delivery;
 import mx.com.amx.transforma.mock.dto.Disponibilidad;
 import mx.com.amx.transforma.mock.dto.Factura;
+import mx.com.amx.transforma.mock.dto.FacturasGuardada;
 import mx.com.amx.transforma.mock.dto.Reclamo;
 
 
@@ -17,5 +18,8 @@ public interface IMockService {
 	List<Delivery> buscarSOT();
 	
 	List<Reclamo> consultaReclamo();
+	
+	FacturasGuardada consultarFacturaGuardada();
+	
 
 }
