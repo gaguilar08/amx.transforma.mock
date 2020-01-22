@@ -1,5 +1,6 @@
 package mx.com.amx.transforma.mock.dto;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Factura {
@@ -7,11 +8,13 @@ public class Factura {
 	private String numFactura;
 	private String total;
 	private String saldo;
-	private Date fechaEmision;
-	private Date fechaVencimiento;
+	// private Date fechaEmision;
+	// private Date fechaVencimiento;
+	private LocalDate fechaEmision;
+	private LocalDate fechaVencimiento;
 	
 	
-	public Factura(String numFactura, String total, String saldo, Date fechaEmision, Date fechaVencimiento) {
+	public Factura(String numFactura, String total, String saldo, LocalDate fechaEmision, LocalDate fechaVencimiento) {
 		super();
 		this.numFactura = numFactura;
 		this.total = total;
@@ -37,16 +40,16 @@ public class Factura {
 	public void setSaldo(String saldo) {
 		this.saldo = saldo;
 	}
-	public Date getFechaEmision() {
+	public LocalDate getFechaEmision() {
 		return fechaEmision;
 	}
-	public void setFechaEmision(Date fechaEmision) {
+	public void setFechaEmision(LocalDate fechaEmision) {
 		this.fechaEmision = fechaEmision;
 	}
-	public Date getFechaVencimiento() {
+	public LocalDate getFechaVencimiento() {
 		return fechaVencimiento;
 	}
-	public void setFechaVencimiento(Date fechaVencimiento) {
+	public void setFechaVencimiento(LocalDate fechaVencimiento) {
 		this.fechaVencimiento = fechaVencimiento;
 	}
 
