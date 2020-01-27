@@ -18,6 +18,7 @@ import mx.com.amx.transforma.mock.dto.FacturasGuardada;
 import mx.com.amx.transforma.mock.dto.IncidenteTecnico;
 import mx.com.amx.transforma.mock.dto.Reclamo;
 import mx.com.amx.transforma.mock.dto.RequestBodyDelivery;
+import mx.com.amx.transforma.mock.dto.RequestBodyFactura;
 import mx.com.amx.transforma.mock.peru.FacturasGuardadaChile;
 
 @Service
@@ -30,30 +31,49 @@ public class IMockServiceImpl implements IMockService {
 	LocalDate parsedDate = LocalDate.parse(text, DateTimeFormatter.ISO_LOCAL_DATE);
 
 	@Override
-	public List<Factura> buscarTodasFacturas() {
-		// TODO Auto-generated method stub
-		return armafacturas();
-	}
-
-	private List<Factura> armafacturas() {
+	public List<Factura> buscarTodasFacturas(RequestBodyFactura parametro) {
 		List<Factura> listFacturas = new ArrayList<>();
 
-		Factura fa1 = new Factura("54321", "3,452.34", "12,432.15", parsedDate.minusDays(10), parsedDate.plusDays(1));
+		if (parametro.getIdCliente().equals("45563214") && parametro.getTipoFacturacion().equals("Fija")) {
+			Factura fa1 = new Factura("54321", "3,452.34", 	"12,432.15", parsedDate.minusDays(10),
+					parsedDate.plusDays(1));
 
-		Factura fa2 = new Factura("54321", "3,452.34", "12,432.15", parsedDate.minusDays(15), parsedDate.plusDays(2));
+			Factura fa2 = new Factura("54345", "756.87", 	"34,456.77", parsedDate.minusDays(15),
+					parsedDate.plusDays(2));
 
-		Factura fa3 = new Factura("54321", "3,452.34", "12,432.15", parsedDate.minusDays(20), parsedDate.plusDays(3));
+			Factura fa3 = new Factura("55621", "11,456.34", "1,567.53", parsedDate.minusDays(20),
+					parsedDate.plusDays(3));
 
-		Factura fa4 = new Factura("54321", "3,452.34", "12,432.15", parsedDate.minusDays(25), parsedDate.plusDays(4));
+			Factura fa4 = new Factura("65321", "0", 		"1,456,456.45", parsedDate.minusDays(25),
+					parsedDate.plusDays(4));
 
-		Factura fa5 = new Factura("54321", "3,452.34", "12,432.15", parsedDate.minusDays(30), parsedDate.plusDays(5));
+			Factura fa5 = new Factura("74334", "-12.12", 	"700", 	parsedDate.minusDays(30),
+					parsedDate.plusDays(5));
 
-		listFacturas.add(fa1);
-		listFacturas.add(fa2);
-		listFacturas.add(fa3);
-		listFacturas.add(fa4);
-		listFacturas.add(fa5);
-		listFacturas.add(fa1);
+			listFacturas.add(fa1);
+			listFacturas.add(fa2);
+			listFacturas.add(fa3);
+			listFacturas.add(fa4);
+			listFacturas.add(fa5);
+			listFacturas.add(fa1);
+
+		}
+
+		if (parametro.getIdCliente().equals("45563214") && parametro.getTipoFacturacion().equals("Movil")) {
+			Factura fa7 = new Factura("98765", "0", 	"0", parsedDate.minusDays(10),
+					parsedDate.plusDays(1));
+
+			Factura fa8 = new Factura("98123", "0", 	"0", parsedDate.minusDays(15),
+					parsedDate.plusDays(2));
+
+			Factura fa9 = new Factura("98654", "0", "0", parsedDate.minusDays(20),
+					parsedDate.plusDays(3));
+			
+			
+			listFacturas.add(fa7);
+			listFacturas.add(fa8);
+			listFacturas.add(fa9);
+		}
 
 		return listFacturas;
 	}
@@ -165,8 +185,8 @@ public class IMockServiceImpl implements IMockService {
 	@Override
 	public List<Reclamo> consultaReclamo(String codCliente) {
 		List<Reclamo> listReclamo = new ArrayList<>();
-		
-		if(codCliente.equals("20122386229")) {
+
+		if (codCliente.equals("20122386229")) {
 			ConsultarReclamoType conRec1 = new ConsultarReclamoType();
 			conRec1.setFAREV_CLI_NOMBRE("20122386229");
 			conRec1.setFAREV_CLI_NOMBRE("Jockey club del Perú");
@@ -184,12 +204,12 @@ public class IMockServiceImpl implements IMockService {
 			conRec1.setFAREV_fase("Instancia");
 			conRec1.setFAREV_noReclamo("190259325");
 			conRec1.setFAREV_condicion("Cerrado");
-			
+
 			Reclamo re1 = new Reclamo(conRec1, parsedDate, "codigoRespuesta OK", "mensajeRespuesta");
 			listReclamo.add(re1);
 		}
-		
-		if(codCliente.equals("20530811001")) {
+
+		if (codCliente.equals("20530811001")) {
 			ConsultarReclamoType conRec2 = new ConsultarReclamoType();
 
 			conRec2.setFAREV_CLI_NOMBRE("20530811001");
@@ -211,7 +231,7 @@ public class IMockServiceImpl implements IMockService {
 
 			Reclamo re2 = new Reclamo(conRec2, parsedDate, "codigoRespuesta OK", "mensajeRespuesta");
 			listReclamo.add(re2);
-			
+
 		}
 
 		return listReclamo;

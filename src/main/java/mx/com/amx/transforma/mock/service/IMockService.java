@@ -9,12 +9,13 @@ import mx.com.amx.transforma.mock.dto.FacturasGuardada;
 import mx.com.amx.transforma.mock.dto.IncidenteTecnico;
 import mx.com.amx.transforma.mock.dto.Reclamo;
 import mx.com.amx.transforma.mock.dto.RequestBodyDelivery;
+import mx.com.amx.transforma.mock.dto.RequestBodyFactura;
 import mx.com.amx.transforma.mock.peru.FacturasGuardadaChile;
 
 
 public interface IMockService {
 	
-	List<Factura> buscarTodasFacturas();
+	List<Factura> buscarTodasFacturas(RequestBodyFactura parametro);
 	
 	List<Disponibilidad> buscarDisponiblidadEquipos();
 	

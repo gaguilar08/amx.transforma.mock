@@ -39,7 +39,9 @@ public class ConsultaReclamoWS {
 	public ReclamoResponse cnfMockServicePost(@RequestBody @Valid RequestBodyReclamo parametro) {
 
 		ReclamoResponse response = new ReclamoResponse(null, parsedDate, "0", "OK");
-
+		response.setCodigoRespuesta("0");
+		response.setEnsajeRespuesta("OK");
+		response.setFechaRespuesta(parsedDate);
 		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente() != "")) {
 			response.setResponse(mockServiceImpl.consultaReclamo(parametro.getCodigoCliente()));
 		}

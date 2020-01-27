@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,18 +41,15 @@ public class EstadoCuentaWS {
 	}
 
 	@PostMapping
-	public List<Factura> cnfMockServicePost(@RequestBody RequestBodyFactura parametro) {
+	public List<Factura> cnfMockServicePost(@RequestBody @Valid RequestBodyFactura parametro) {
 
 		List<Factura> response = new ArrayList<Factura>();
 
 		if (parametro != null && (parametro.getIdCliente() != null && parametro.getIdCliente() != "")
 				&& (parametro.getTipoFacturacion() != null && parametro.getTipoFacturacion() != "")) {
-			response = mockServiceImpl.buscarTodasFacturas();
-		} else {
-			Factura fac1 = new Factura("IdCliente y TipoFacturacion son obligatorios", "", "", null, null);
-			response.add(fac1);
-		}
-
+			response = mockServiceImpl.buscarTodasFacturas(parametro);
+		} 
+		
 		System.out.println("IdCliente: " + parametro.getIdCliente());
 		System.out.println("TipoFacturacion: " + parametro.getTipoFacturacion());
 		System.out.println("NumFactura: " + parametro.getNumFactura());

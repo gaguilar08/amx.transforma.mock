@@ -1,7 +1,11 @@
 package mx.com.amx.transforma.mock.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class RequestBodyFactura {
+	@NotNull
 	private String idCliente;
+	@NotNull
 	private String tipoFacturacion;
 	private String numFactura;
 	private String periodoDesde;
