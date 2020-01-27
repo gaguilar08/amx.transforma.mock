@@ -3,6 +3,8 @@ package mx.com.amx.transforma.mock.peru;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,11 +30,11 @@ public class DeliveryWS {
 	}
 
 	@PostMapping
-	public List<Delivery> cnfMockServicePost(@RequestBody RequestBodyDelivery parametro) {
+	public List<Delivery> cnfMockServicePost(@RequestBody @Valid RequestBodyDelivery parametro) {
 
 		List<Delivery> response = new ArrayList<>();
 		
-		response = mockServiceImpl.buscarSOT();
+		response = mockServiceImpl.buscarSOT(parametro);
 
 
 		System.out.println("idOportunidad: " + 	parametro.getIdOportunidad());

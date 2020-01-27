@@ -1,8 +1,11 @@
 package mx.com.amx.transforma.mock.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class RequestBodyReclamo {
 	
 	private String k_nro_caso;
+	@NotNull
 	private String codigoCliente;
 	private String tipoDocumento;
 	private String nroDocumento;

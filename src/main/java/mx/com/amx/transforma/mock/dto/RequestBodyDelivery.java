@@ -1,9 +1,12 @@
 package mx.com.amx.transforma.mock.dto;
 
-public class RequestBodyDelivery {
+import javax.validation.constraints.NotNull;
 
+//@CheckAtLeastOneNotNull(fieldNames={"idOportunidad","IdPropuesta", "IdCotizacion", "codProyecto", "CID","nroSolicitud" })
+public class RequestBodyDelivery {
+	@NotNull
 	private String idOportunidad;	// 72346796324
-	private String IdPropuesta;		// 26853482425
+	private String idPropuesta;		// 26853482425
 	private String IdCotizacion;	// 873283
 	private String codProyecto;		// 9963689
 	private String CID;				// 0005774368
@@ -16,10 +19,10 @@ public class RequestBodyDelivery {
 		this.idOportunidad = idOportunidad;
 	}
 	public String getIdPropuesta() {
-		return IdPropuesta;
+		return idPropuesta;
 	}
 	public void setIdPropuesta(String idPropuesta) {
-		IdPropuesta = idPropuesta;
+		this.idPropuesta = idPropuesta;
 	}
 	public String getIdCotizacion() {
 		return IdCotizacion;
