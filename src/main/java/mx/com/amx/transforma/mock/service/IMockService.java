@@ -10,6 +10,7 @@ import mx.com.amx.transforma.mock.dto.IncidenteTecnico;
 import mx.com.amx.transforma.mock.dto.Reclamo;
 import mx.com.amx.transforma.mock.dto.RequestBodyDelivery;
 import mx.com.amx.transforma.mock.dto.RequestBodyFactura;
+import mx.com.amx.transforma.mock.dto.RequestBodyIncidente;
 import mx.com.amx.transforma.mock.peru.FacturasGuardadaChile;
 
 
@@ -25,7 +26,7 @@ public interface IMockService {
 	
 	FacturasGuardada consultarFacturaGuardada();
 
-	List<IncidenteTecnico> consultaIncidente();
+	List<IncidenteTecnico> consultaIncidente(RequestBodyIncidente parametro);
 	
 	List <FacturasGuardadaChile> consultarFacturaGuardadaChile(String noFactura);
 

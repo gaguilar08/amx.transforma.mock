@@ -19,6 +19,7 @@ import mx.com.amx.transforma.mock.dto.IncidenteTecnico;
 import mx.com.amx.transforma.mock.dto.Reclamo;
 import mx.com.amx.transforma.mock.dto.RequestBodyDelivery;
 import mx.com.amx.transforma.mock.dto.RequestBodyFactura;
+import mx.com.amx.transforma.mock.dto.RequestBodyIncidente;
 import mx.com.amx.transforma.mock.peru.FacturasGuardadaChile;
 
 @Service
@@ -34,42 +35,34 @@ public class IMockServiceImpl implements IMockService {
 	public List<Factura> buscarTodasFacturas(RequestBodyFactura parametro) {
 		List<Factura> listFacturas = new ArrayList<>();
 
-		if (parametro.getIdCliente().equals("45563214") && parametro.getTipoFacturacion().equals("Fija")) {
-			Factura fa1 = new Factura("54321", "3,452.34", 	"12,432.15", parsedDate.minusDays(10),
+		if (parametro.getIdCliente().equals("98765432191") && parametro.getTipoFacturacion().equals("Fija")) {
+			Factura fa1 = new Factura("54321", "3,452.34", "12,432.15", parsedDate.minusDays(10),
 					parsedDate.plusDays(1));
 
-			Factura fa2 = new Factura("54345", "756.87", 	"34,456.77", parsedDate.minusDays(15),
-					parsedDate.plusDays(2));
+			Factura fa2 = new Factura("54345", "756.87", "34,456.77", parsedDate.minusDays(15), parsedDate.plusDays(2));
 
 			Factura fa3 = new Factura("55621", "11,456.34", "1,567.53", parsedDate.minusDays(20),
 					parsedDate.plusDays(3));
 
-			Factura fa4 = new Factura("65321", "0", 		"1,456,456.45", parsedDate.minusDays(25),
-					parsedDate.plusDays(4));
+			Factura fa4 = new Factura("65321", "0", "1,456,456.45", parsedDate.minusDays(25), parsedDate.plusDays(4));
 
-			Factura fa5 = new Factura("74334", "-12.12", 	"700", 	parsedDate.minusDays(30),
-					parsedDate.plusDays(5));
+			Factura fa5 = new Factura("74334", "-12.12", "700", parsedDate.minusDays(30), parsedDate.plusDays(5));
 
 			listFacturas.add(fa1);
 			listFacturas.add(fa2);
 			listFacturas.add(fa3);
 			listFacturas.add(fa4);
 			listFacturas.add(fa5);
-			listFacturas.add(fa1);
 
 		}
 
-		if (parametro.getIdCliente().equals("45563214") && parametro.getTipoFacturacion().equals("Movil")) {
-			Factura fa7 = new Factura("98765", "0", 	"0", parsedDate.minusDays(10),
-					parsedDate.plusDays(1));
+		if (parametro.getIdCliente().equals("12345667980") && parametro.getTipoFacturacion().equals("Movil")) {
+			Factura fa7 = new Factura("98765", "0", "0", parsedDate.minusDays(10), parsedDate.plusDays(1));
 
-			Factura fa8 = new Factura("98123", "0", 	"0", parsedDate.minusDays(15),
-					parsedDate.plusDays(2));
+			Factura fa8 = new Factura("98123", "0", "0", parsedDate.minusDays(15), parsedDate.plusDays(2));
 
-			Factura fa9 = new Factura("98654", "0", "0", parsedDate.minusDays(20),
-					parsedDate.plusDays(3));
-			
-			
+			Factura fa9 = new Factura("98654", "0", "0", parsedDate.minusDays(20), parsedDate.plusDays(3));
+
 			listFacturas.add(fa7);
 			listFacturas.add(fa8);
 			listFacturas.add(fa9);
@@ -249,24 +242,64 @@ public class IMockServiceImpl implements IMockService {
 	}
 
 	@Override
-	public List<IncidenteTecnico> consultaIncidente() {
+	public List<IncidenteTecnico> consultaIncidente(RequestBodyIncidente parametro) {
 		List<IncidenteTecnico> listIncidente = new ArrayList<>();
 
-		IncidenteTecnico inc1 = new IncidenteTecnico(18309939, 1, "Nuevo",
-				"Descripción del diagnóstico de la incidencia", parsedDate, parsedDate, "Descripción de la incidencia",
-				"Nombre del Ejecutivo", "Nombre del Asistente");
+		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente().equals("7867"))
+				&& (parametro.getTipoIncidencia() != null && parametro.getTipoIncidencia() != 0)) {
+			
+			IncidenteTecnico inc1 = new IncidenteTecnico(18309939, 1, "Registrada",
+					"Descripción del diagnóstico de la incidencia", parsedDate, parsedDate,
+					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
 
-		IncidenteTecnico inc2 = new IncidenteTecnico(18309940, 2, "Nuevo",
-				"Descripción del diagnóstico de la incidencia", parsedDate, parsedDate, "Descripción de la incidencia",
-				"Nombre del Ejecutivo", "Nombre del Asistente");
+			IncidenteTecnico inc2 = new IncidenteTecnico(18309940, 2, "Suspendida",
+					"Descripción del diagnóstico de la incidencia", parsedDate, parsedDate,
+					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
 
-		IncidenteTecnico inc3 = new IncidenteTecnico(18309941, 1, "Nuevo",
-				"Descripción del diagnóstico de la incidencia", parsedDate, parsedDate, "Descripción de la incidencia",
-				"Nombre del Ejecutivo", "Nombre del Asistente");
+			IncidenteTecnico inc3 = new IncidenteTecnico(18309941, 1, "En progreso",
+					"Descripción del diagnóstico de la incidencia", parsedDate, parsedDate,
+					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
 
-		listIncidente.add(inc1);
-		listIncidente.add(inc2);
-		listIncidente.add(inc3);
+			listIncidente.add(inc1);
+			listIncidente.add(inc2);
+			listIncidente.add(inc3);
+
+		}
+
+		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente().equals("7867"))
+				&& (parametro.getTipoIncidencia() == null)) {
+			
+			IncidenteTecnico inc5 = new IncidenteTecnico(18309798, 1, "Registrada",
+					"Descripción del diagnóstico de la incidencia", parsedDate.minusDays(5), parsedDate.plusDays(5),
+					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
+
+			IncidenteTecnico inc6 = new IncidenteTecnico(18309800, 2, "Suspendida",
+					"Descripción del diagnóstico de la incidencia", parsedDate.minusDays(5), parsedDate.plusDays(1),
+					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
+
+			IncidenteTecnico inc7 = new IncidenteTecnico(18309850, 1, "En progreso",
+					"Descripción del diagnóstico de la incidencia", parsedDate.minusDays(4), parsedDate.plusDays(2),
+					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
+			
+			IncidenteTecnico inc8 = new IncidenteTecnico(18309900, 1, "En progreso",
+					"Descripción del diagnóstico de la incidencia", parsedDate.minusDays(3), parsedDate.plusDays(3),
+					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
+			
+			IncidenteTecnico inc9 = new IncidenteTecnico(18309123, 1, "En progreso",
+					"Descripción del diagnóstico de la incidencia", parsedDate.minusDays(2), parsedDate.plusDays(4),
+					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
+			
+			IncidenteTecnico inc10 = new IncidenteTecnico(1830934, 1, "En progreso",
+					"Descripción del diagnóstico de la incidencia", parsedDate.minusDays(1), parsedDate.plusDays(5),
+					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
+			
+			listIncidente.add(inc5);
+			listIncidente.add(inc6);
+			listIncidente.add(inc7);
+			listIncidente.add(inc8);
+			listIncidente.add(inc9);
+			listIncidente.add(inc10);
+		}
 
 		return listIncidente;
 	}

@@ -38,15 +38,8 @@ public class IncidenteTecnicoWS {
 		List<IncidenteTecnico> response =  new ArrayList<IncidenteTecnico>();
 		
 		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente() != "")) {
-			response = mockServiceImpl.consultaIncidente();
-		} else {
-			IncidenteTecnico inc = new IncidenteTecnico(null, null, null,
-					"Codigo de cliente mandatorio - Identificador tributario", parsedDate, parsedDate, null,
-					null, null);
-			
-			response.add(inc);
-		} 
-			
+			response = mockServiceImpl.consultaIncidente(parametro);
+		}	
 		return response;
 	}
 

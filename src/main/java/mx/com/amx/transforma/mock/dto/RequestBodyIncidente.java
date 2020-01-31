@@ -2,6 +2,8 @@ package mx.com.amx.transforma.mock.dto;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.NotNull;
+
 public class RequestBodyIncidente {
 	private Integer 	numeroIncidencia;
 	private Integer 	tipoIncidencia;
@@ -10,6 +12,7 @@ public class RequestBodyIncidente {
 	private LocalDate 	periodoFinal;
 	private String     	numeroServicio;
 	private String 		ambito;
+	@NotNull
 	private String 		codigoCliente;	// Identicador tributario - Mandatorio
 
 	public Integer getNumeroIncidencia() {
