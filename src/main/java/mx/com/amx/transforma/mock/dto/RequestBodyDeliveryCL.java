@@ -13,7 +13,8 @@ public class RequestBodyDeliveryCL {
 	private LocalDate periodoInicio;
 	private LocalDate periodoFinal;
 	@NotNull
-	private int codigoCliente;
+	private Double codigoCliente;
+	
 	public int getNumeroOrden() {
 		return numeroOrden;
 	}
@@ -50,10 +51,10 @@ public class RequestBodyDeliveryCL {
 	public void setPeriodoFinal(LocalDate periodoFinal) {
 		this.periodoFinal = periodoFinal;
 	}
-	public int getCodigoCliente() {
+	public Double getCodigoCliente() {
 		return codigoCliente;
 	}
-	public void setCodigoCliente(int codigoCliente) {
+	public void setCodigoCliente(Double codigoCliente) {
 		this.codigoCliente = codigoCliente;
 	}
 	

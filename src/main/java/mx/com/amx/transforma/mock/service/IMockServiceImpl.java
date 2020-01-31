@@ -12,12 +12,14 @@ import org.springframework.stereotype.Service;
 import mx.com.amx.transforma.mock.dto.AnotacionesDelivery;
 import mx.com.amx.transforma.mock.dto.ConsultarReclamoType;
 import mx.com.amx.transforma.mock.dto.Delivery;
+import mx.com.amx.transforma.mock.dto.DeliveryCL;
 import mx.com.amx.transforma.mock.dto.Disponibilidad;
 import mx.com.amx.transforma.mock.dto.Factura;
 import mx.com.amx.transforma.mock.dto.FacturasGuardada;
 import mx.com.amx.transforma.mock.dto.IncidenteTecnico;
 import mx.com.amx.transforma.mock.dto.Reclamo;
 import mx.com.amx.transforma.mock.dto.RequestBodyDelivery;
+import mx.com.amx.transforma.mock.dto.RequestBodyDeliveryCL;
 import mx.com.amx.transforma.mock.dto.RequestBodyFactura;
 import mx.com.amx.transforma.mock.dto.RequestBodyIncidente;
 import mx.com.amx.transforma.mock.peru.FacturasGuardadaChile;
@@ -35,7 +37,7 @@ public class IMockServiceImpl implements IMockService {
 	public List<Factura> buscarTodasFacturas(RequestBodyFactura parametro) {
 		List<Factura> listFacturas = new ArrayList<>();
 
-		if (parametro.getIdCliente().equals("98765432191") && parametro.getTipoFacturacion().equals("Fija")) {
+		if (parametro.getIdCliente().equals("45563214") && parametro.getTipoFacturacion().equals("Fija")) {
 			Factura fa1 = new Factura("54321", "3,452.34", "12,432.15", parsedDate.minusDays(10),
 					parsedDate.plusDays(1));
 
@@ -56,7 +58,7 @@ public class IMockServiceImpl implements IMockService {
 
 		}
 
-		if (parametro.getIdCliente().equals("12345667980") && parametro.getTipoFacturacion().equals("Movil")) {
+		if (parametro.getIdCliente().equals("45563214") && parametro.getTipoFacturacion().equals("Movil")) {
 			Factura fa7 = new Factura("98765", "0", "0", parsedDate.minusDays(10), parsedDate.plusDays(1));
 
 			Factura fa8 = new Factura("98123", "0", "0", parsedDate.minusDays(15), parsedDate.plusDays(2));
@@ -247,7 +249,7 @@ public class IMockServiceImpl implements IMockService {
 
 		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente().equals("7867"))
 				&& (parametro.getTipoIncidencia() != null && parametro.getTipoIncidencia() != 0)) {
-			
+
 			IncidenteTecnico inc1 = new IncidenteTecnico(18309939, 1, "Registrada",
 					"Descripción del diagnóstico de la incidencia", parsedDate, parsedDate,
 					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
@@ -268,7 +270,7 @@ public class IMockServiceImpl implements IMockService {
 
 		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente().equals("7867"))
 				&& (parametro.getTipoIncidencia() == null)) {
-			
+
 			IncidenteTecnico inc5 = new IncidenteTecnico(18309798, 1, "Registrada",
 					"Descripción del diagnóstico de la incidencia", parsedDate.minusDays(5), parsedDate.plusDays(5),
 					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
@@ -280,19 +282,19 @@ public class IMockServiceImpl implements IMockService {
 			IncidenteTecnico inc7 = new IncidenteTecnico(18309850, 1, "En progreso",
 					"Descripción del diagnóstico de la incidencia", parsedDate.minusDays(4), parsedDate.plusDays(2),
 					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
-			
+
 			IncidenteTecnico inc8 = new IncidenteTecnico(18309900, 1, "En progreso",
 					"Descripción del diagnóstico de la incidencia", parsedDate.minusDays(3), parsedDate.plusDays(3),
 					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
-			
+
 			IncidenteTecnico inc9 = new IncidenteTecnico(18309123, 1, "En progreso",
 					"Descripción del diagnóstico de la incidencia", parsedDate.minusDays(2), parsedDate.plusDays(4),
 					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
-			
+
 			IncidenteTecnico inc10 = new IncidenteTecnico(1830934, 1, "En progreso",
 					"Descripción del diagnóstico de la incidencia", parsedDate.minusDays(1), parsedDate.plusDays(5),
 					"Descripción de la incidencia", "Nombre del Ejecutivo", "Nombre del Asistente");
-			
+
 			listIncidente.add(inc5);
 			listIncidente.add(inc6);
 			listIncidente.add(inc7);
@@ -332,6 +334,43 @@ public class IMockServiceImpl implements IMockService {
 
 		// TODO Auto-generated method stub
 		return listaFactura;
+	}
+
+	@Override
+	public List<DeliveryCL> buscarSOT(RequestBodyDeliveryCL parametro) {
+		List<DeliveryCL> response = new ArrayList<>();
+
+		if (parametro != null && (parametro.getCodigoCliente() != 0 && parametro.getCodigoCliente() == 987654321)) {
+			DeliveryCL de1 = new DeliveryCL(34234565, "Proceso", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+			
+			DeliveryCL de2 = new DeliveryCL(54346444, "Cerrado", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+		
+			DeliveryCL de3 = new DeliveryCL(96734534, "Nuevo", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+			
+			DeliveryCL de4 = new DeliveryCL(96784565, "Nuevo", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+			
+			DeliveryCL de5 = new DeliveryCL(93454345, "Pendiente", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+			
+			
+			response.add(de1);
+			response.add(de2);
+			response.add(de3);
+			response.add(de4);
+			response.add(de5);
+		}
+
+		if (parametro != null && (parametro.getCodigoCliente() != 0 && parametro.getCodigoCliente() == 123456679)) {
+			DeliveryCL de6 = new DeliveryCL(32434544, "Proceso", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+			DeliveryCL de7 = new DeliveryCL(67864565, "Proceso", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+			DeliveryCL de8 = new DeliveryCL(86784455, "Proceso", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+			
+			response.add(de6);
+			response.add(de7);
+			response.add(de8);
+		}
+
+		// TODO Auto-generated method stub
+		return response;
 	}
 
 }

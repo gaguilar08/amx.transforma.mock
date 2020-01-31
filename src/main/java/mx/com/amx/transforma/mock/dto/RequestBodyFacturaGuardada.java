@@ -1,7 +1,10 @@
 package mx.com.amx.transforma.mock.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class RequestBodyFacturaGuardada {
 	
+	@NotNull
 	private String nombreArchivo;
 	private String tipoArchivo;
 	private String ubicacionArchivo;

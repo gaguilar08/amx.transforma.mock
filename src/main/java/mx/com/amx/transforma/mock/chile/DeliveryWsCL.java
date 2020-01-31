@@ -1,5 +1,6 @@
 package mx.com.amx.transforma.mock.chile;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import mx.com.amx.transforma.mock.dto.Delivery;
 import mx.com.amx.transforma.mock.dto.DeliveryCL;
 import mx.com.amx.transforma.mock.dto.RequestBodyDeliveryCL;
 import mx.com.amx.transforma.mock.service.IMockServiceImpl;
@@ -29,7 +31,12 @@ public class DeliveryWsCL {
 	
 	@PostMapping
 	public List<DeliveryCL> cnfMockServicePost(@RequestBody @Valid RequestBodyDeliveryCL parametro) {
-		return null;
+		
+		List<DeliveryCL> response = new ArrayList<>();
+		
+		response = mockServiceImpl.buscarSOT(parametro);
+
+		return response;
 	}
 
 

@@ -1,5 +1,7 @@
 package mx.com.amx.transforma.mock.peru;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,15 +26,14 @@ public class FacturasGuardadasWS {
 	}
 	
 	@PostMapping
-	public FacturasGuardada cnfMockServicePost(@RequestBody RequestBodyFacturaGuardada parametro) {
+	public FacturasGuardada cnfMockServicePost(@RequestBody @Valid RequestBodyFacturaGuardada parametro) {
 		
 		FacturasGuardada response = null;
 		
 		if (parametro != null && (parametro.getNombreArchivo() != null && parametro.getNombreArchivo() != "")) {
 			response = mockServiceImpl.consultarFacturaGuardada();
-		} else {
-			response = new FacturasGuardada("Nombre de Archivo es obligatorio", "-1", "Error");
-		}
+		} 
+		
 		return response;
 	}
 }
