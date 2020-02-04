@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import mx.com.amx.transforma.mock.dto.FacturasGuardada;
+import mx.com.amx.transforma.mock.dto.FacturasGuardadaChile;
 import mx.com.amx.transforma.mock.dto.RequestBodyFacturaGuardada;
 import mx.com.amx.transforma.mock.dto.RequestBodyFacturaGuardadaChile;
-import mx.com.amx.transforma.mock.peru.FacturasGuardadaChile;
 import mx.com.amx.transforma.mock.service.IMockServiceImpl;
 
 @RestController
@@ -36,13 +36,11 @@ public class FacturasGuardadasCLWS {
 
 		List<FacturasGuardadaChile> response = new ArrayList<>();
 
-		if (parametro != null && (parametro.getNumFactura() != null && parametro.getNumFactura() != "")) {
-			
+		if (parametro != null && (parametro.getNumFactura() != null && parametro.getNumFactura() != "")) {	
 			System.out.println("Numero de factura: " + parametro.getNumFactura());
 			response = mockServiceImpl.consultarFacturaGuardadaChile(parametro.getNumFactura());
-		} else {
-			System.out.println("No. de factura es obligatorio");
-	}
+		} 
+		
 		return response;
 	}
 

@@ -14,15 +14,16 @@ import mx.com.amx.transforma.mock.dto.ConsultarReclamoType;
 import mx.com.amx.transforma.mock.dto.Delivery;
 import mx.com.amx.transforma.mock.dto.DeliveryCL;
 import mx.com.amx.transforma.mock.dto.Disponibilidad;
+import mx.com.amx.transforma.mock.dto.DocumentoBase64;
 import mx.com.amx.transforma.mock.dto.Factura;
 import mx.com.amx.transforma.mock.dto.FacturasGuardada;
+import mx.com.amx.transforma.mock.dto.FacturasGuardadaChile;
 import mx.com.amx.transforma.mock.dto.IncidenteTecnico;
 import mx.com.amx.transforma.mock.dto.Reclamo;
 import mx.com.amx.transforma.mock.dto.RequestBodyDelivery;
 import mx.com.amx.transforma.mock.dto.RequestBodyDeliveryCL;
 import mx.com.amx.transforma.mock.dto.RequestBodyFactura;
 import mx.com.amx.transforma.mock.dto.RequestBodyIncidente;
-import mx.com.amx.transforma.mock.peru.FacturasGuardadaChile;
 
 @Service
 public class IMockServiceImpl implements IMockService {
@@ -308,31 +309,45 @@ public class IMockServiceImpl implements IMockService {
 
 	@Override
 	public List<FacturasGuardadaChile> consultarFacturaGuardadaChile(String noFactura) {
-		List<FacturasGuardadaChile> listaFactura = new ArrayList<>();
+		List<FacturasGuardadaChile> listaFactura = new ArrayList<FacturasGuardadaChile>();
 
-		if (noFactura == "3254") {
-			/*
-			 * FacturasGuardadaChile f1 = new FacturasGuardadaChile("documentoBase64", "0",
-			 * "éxito", "Factura"); FacturasGuardadaChile f2 = new
-			 * FacturasGuardadaChile("documentoBase64", "codigoRespuest",
-			 * "descripcionRespuesta", "Detalle");
-			 * 
-			 * listaFactura.add(f1);
-			 */
-		}
-		if (noFactura == "4450") {
-			/*
-			 * FacturasGuardadaChile f1 = new FacturasGuardadaChile("documentoBase64",
-			 * "codigoRespuest", "descripcionRespuesta", "Resumen"); FacturasGuardadaChile
-			 * f2 = new FacturasGuardadaChile("documentoBase64", "codigoRespuest",
-			 * "descripcionRespuesta", "EstadoCuenta");
-			 */
+		if (noFactura.equals("3254")) {
 
-		} else {
+			List<DocumentoBase64> listDocumentos = new ArrayList<>();
+			String b64 = "JVBERi0xLjQKMyAwIG9iago8PC9UeXBlIC9QYWd";
+
+			DocumentoBase64 doc1 = new DocumentoBase64("Factura", b64);
+			DocumentoBase64 doc2 = new DocumentoBase64("Resumen", b64);
+
+			listDocumentos.add(doc1);
+			listDocumentos.add(doc2);
+
+			FacturasGuardadaChile f1 = new FacturasGuardadaChile((ArrayList<DocumentoBase64>) listDocumentos,
+					"0", "descripcionRespuesta - Éxito");
+
+			listaFactura.add(f1);
 
 		}
+		if (noFactura.equals("4450")) {
 
-		// TODO Auto-generated method stub
+			List<DocumentoBase64> listDocumentos2 = new ArrayList<>();
+			String b64 = "JVBERi0xLjQKMyAwIG9iago8PC9UeXBlIC9QYWd";
+
+			DocumentoBase64 doc3 = new DocumentoBase64("Factura", b64);
+			DocumentoBase64 doc4 = new DocumentoBase64("Resumen", b64);
+			DocumentoBase64 doc5 = new DocumentoBase64("EstadoCuenta", b64);
+
+			listDocumentos2.add(doc3);
+			listDocumentos2.add(doc4);
+			listDocumentos2.add(doc5);
+
+			FacturasGuardadaChile f1 = new FacturasGuardadaChile((ArrayList<DocumentoBase64>) listDocumentos2,
+					"0", "descripcionRespuesta - Éxito");
+
+			listaFactura.add(f1);
+
+		}
+
 		return listaFactura;
 	}
 
@@ -341,17 +356,21 @@ public class IMockServiceImpl implements IMockService {
 		List<DeliveryCL> response = new ArrayList<>();
 
 		if (parametro != null && (parametro.getCodigoCliente() != 0 && parametro.getCodigoCliente() == 987654321)) {
-			DeliveryCL de1 = new DeliveryCL(34234565, "Proceso", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
-			
-			DeliveryCL de2 = new DeliveryCL(54346444, "Cerrado", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
-		
-			DeliveryCL de3 = new DeliveryCL(96734534, "Nuevo", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
-			
-			DeliveryCL de4 = new DeliveryCL(96784565, "Nuevo", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
-			
-			DeliveryCL de5 = new DeliveryCL(93454345, "Pendiente", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
-			
-			
+			DeliveryCL de1 = new DeliveryCL(34234565, "Proceso", "Observación", parsedDate, parsedDate,
+					"descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+
+			DeliveryCL de2 = new DeliveryCL(54346444, "Cerrado", "Observación", parsedDate, parsedDate,
+					"descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+
+			DeliveryCL de3 = new DeliveryCL(96734534, "Nuevo", "Observación", parsedDate, parsedDate,
+					"descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+
+			DeliveryCL de4 = new DeliveryCL(96784565, "Nuevo", "Observación", parsedDate, parsedDate,
+					"descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+
+			DeliveryCL de5 = new DeliveryCL(93454345, "Pendiente", "Observación", parsedDate, parsedDate,
+					"descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+
 			response.add(de1);
 			response.add(de2);
 			response.add(de3);
@@ -360,10 +379,13 @@ public class IMockServiceImpl implements IMockService {
 		}
 
 		if (parametro != null && (parametro.getCodigoCliente() != 0 && parametro.getCodigoCliente() == 123456679)) {
-			DeliveryCL de6 = new DeliveryCL(32434544, "Proceso", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
-			DeliveryCL de7 = new DeliveryCL(67864565, "Proceso", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
-			DeliveryCL de8 = new DeliveryCL(86784455, "Proceso", "Observación", parsedDate, parsedDate, "descripcionOrden", "usuarioResponsable", "usuarioAsignado");
-			
+			DeliveryCL de6 = new DeliveryCL(32434544, "Proceso", "Observación", parsedDate, parsedDate,
+					"descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+			DeliveryCL de7 = new DeliveryCL(67864565, "Proceso", "Observación", parsedDate, parsedDate,
+					"descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+			DeliveryCL de8 = new DeliveryCL(86784455, "Proceso", "Observación", parsedDate, parsedDate,
+					"descripcionOrden", "usuarioResponsable", "usuarioAsignado");
+
 			response.add(de6);
 			response.add(de7);
 			response.add(de8);

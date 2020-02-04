@@ -1,8 +1,6 @@
-package mx.com.amx.transforma.mock.peru;
+package mx.com.amx.transforma.mock.dto;
 
 import java.util.ArrayList;
-
-import mx.com.amx.transforma.mock.dto.DocumentoBase64;
 
 public class FacturasGuardadaChile  {
 	
