@@ -1,11 +1,11 @@
 package mx.com.amx.transforma.mock.chile;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,9 +23,18 @@ public class EstadoCuentaWS {
 
 	@Autowired
 	IMockServiceImpl mockServiceImpl;
+	
+	Date objDate = new Date();
+
+	LocalDate date = LocalDate.now();
+	String text = date.format(DateTimeFormatter.ISO_LOCAL_DATE);
+	LocalDate parsedDate = LocalDate.parse(text, DateTimeFormatter.ISO_LOCAL_DATE);
+
 
 	@GetMapping
 	public String cnfMockService() {
+		System.out.println(objDate);
+		System.out.println(parsedDate);
 		return "/api/v1/chile/estadodecuentas";
 	}
 
