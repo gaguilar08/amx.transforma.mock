@@ -261,8 +261,7 @@ public class IMockServiceImpl implements IMockService {
 	public List<IncidenteTecnico> consultaIncidente(RequestBodyIncidente parametro) {
 		List<IncidenteTecnico> listIncidente = new ArrayList<>();
 
-		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente().equals("7867"))
-				&& (parametro.getTipoIncidencia() != null && parametro.getTipoIncidencia() != 0)) {
+		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente().equals("45563214"))) {
 
 			IncidenteTecnico inc1 = new IncidenteTecnico(18309939, 1, "Registrada",
 					"Descripción del diagnóstico de la incidencia", parsedDate, parsedDate,
@@ -282,7 +281,7 @@ public class IMockServiceImpl implements IMockService {
 
 		}
 
-		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente().equals("7867"))
+		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente().equals("12345678"))
 				&& (parametro.getTipoIncidencia() == null)) {
 
 			IncidenteTecnico inc5 = new IncidenteTecnico(18309798, 1, "Registrada",
@@ -349,7 +348,7 @@ public class IMockServiceImpl implements IMockService {
 		byte[] decoder2 = Base64.getDecoder().decode(fileAsString2);
 
 		
-		if (noFactura.equals("3254")) {
+		if (noFactura.equals("54321")) {
 			List<DocumentoBase64> listDocumentos = new ArrayList<>();
 				
 			
@@ -365,7 +364,7 @@ public class IMockServiceImpl implements IMockService {
 			listaFactura.add(f1);
 
 		}
-		if (noFactura.equals("4450")) {
+		if (noFactura.equals("98765")) {
 			List<DocumentoBase64> listDocumentos2 = new ArrayList<>();
 
 			DocumentoBase64 doc3 = new DocumentoBase64("Factura", decoder.toString());
