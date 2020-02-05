@@ -4,7 +4,7 @@ import javax.validation.constraints.NotNull;
 
 //@CheckAtLeastOneNotNull(fieldNames={"idOportunidad","IdPropuesta", "IdCotizacion", "codProyecto", "CID","nroSolicitud" })
 public class RequestBodyDelivery {
-	@NotNull
+	//@NotNull
 	private String idOportunidad;	// 72346796324
 	private String idPropuesta;		// 26853482425
 	private String IdCotizacion;	// 873283

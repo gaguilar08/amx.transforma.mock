@@ -91,7 +91,7 @@ public class IMockServiceImpl implements IMockService {
 	public List<Delivery> buscarSOT(RequestBodyDelivery parametro) {
 		List<Delivery> listDelivery = new ArrayList<>();
 
-		if ((parametro.getIdOportunidad() != null && parametro.getIdOportunidad().equals("72346796324"))
+		if ((parametro.getIdOportunidad() != null && parametro.getIdOportunidad().equals("0063F00000Jk0TrQAJ"))
 				&& (parametro.getIdPropuesta() == null)) {
 			List<AnotacionesDelivery> list_ad1 = new ArrayList<>();
 			AnotacionesDelivery ad1 = new AnotacionesDelivery("Agenda cuadrilla configurable",
@@ -114,7 +114,7 @@ public class IMockServiceImpl implements IMockService {
 			listDelivery.add(de2);
 
 		}
-		if ((parametro.getIdOportunidad() != null && parametro.getIdOportunidad().equals("72346796325"))) {
+		if ((parametro.getNroSolicitud() != null && parametro.getNroSolicitud().equals("3000577436815"))) {
 			List<AnotacionesDelivery> list_ad3 = new ArrayList<>();
 
 			AnotacionesDelivery ad3 = new AnotacionesDelivery("Activación /Desactivación del servicio",
