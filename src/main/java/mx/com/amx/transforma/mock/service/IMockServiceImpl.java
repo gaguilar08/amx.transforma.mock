@@ -237,6 +237,7 @@ public class IMockServiceImpl implements IMockService {
 		return listReclamo;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public FacturasGuardada consultarFacturaGuardada() {
 		
@@ -249,11 +250,13 @@ public class IMockServiceImpl implements IMockService {
 			e.printStackTrace();
 		}
 		
-		System.out.println(fileAsString);
+		System.out.println("txt: "+ fileAsString);
 		
 		byte[] decoder = Base64.getDecoder().decode(fileAsString);
+		
+		System.out.println("decoder: " + decoder.toString());
 
-		FacturasGuardada response = new FacturasGuardada(decoder.toString(), "0", "éxito");
+		FacturasGuardada response = new FacturasGuardada(fileAsString, "0", "éxito");
 		return response;
 	}
 	
@@ -269,7 +272,9 @@ public class IMockServiceImpl implements IMockService {
 			e.printStackTrace();
 		}
 		
-		return fileAsString;	
+		byte[] decoder = Base64.getDecoder().decode(fileAsString);
+		
+		return fileAsString  + " decoder : " + decoder.toString();	
 	}
 	
 	@Override
@@ -348,7 +353,7 @@ public class IMockServiceImpl implements IMockService {
 			e.printStackTrace();
 		}
 		System.out.println(fileAsString);
-		byte[] decoder = Base64.getDecoder().decode(fileAsString);
+		//byte[] decoder = Base64.getDecoder().decode(fileAsString);
 		
 		
 		File reportFile2 = new File("file2.txt");
@@ -360,15 +365,15 @@ public class IMockServiceImpl implements IMockService {
 			e.printStackTrace();
 		}
 		System.out.println(fileAsString2);
-		byte[] decoder2 = Base64.getDecoder().decode(fileAsString2);
+		//byte[] decoder2 = Base64.getDecoder().decode(fileAsString2);
 
 		
 		if (noFactura.equals("54321")) {
 			List<DocumentoBase64> listDocumentos = new ArrayList<>();
 				
 			
-			DocumentoBase64 doc1 = new DocumentoBase64("Factura", decoder.toString());
-			DocumentoBase64 doc2 = new DocumentoBase64("Resumen", decoder2.toString());
+			DocumentoBase64 doc1 = new DocumentoBase64("Factura", fileAsString);
+			DocumentoBase64 doc2 = new DocumentoBase64("Resumen", fileAsString2);
 
 			listDocumentos.add(doc1);
 			listDocumentos.add(doc2);
@@ -382,9 +387,9 @@ public class IMockServiceImpl implements IMockService {
 		if (noFactura.equals("98765")) {
 			List<DocumentoBase64> listDocumentos2 = new ArrayList<>();
 
-			DocumentoBase64 doc3 = new DocumentoBase64("Factura", decoder.toString());
-			DocumentoBase64 doc4 = new DocumentoBase64("Resumen", decoder2.toString());
-			DocumentoBase64 doc5 = new DocumentoBase64("EstadoCuenta", decoder.toString());
+			DocumentoBase64 doc3 = new DocumentoBase64("Factura", fileAsString);
+			DocumentoBase64 doc4 = new DocumentoBase64("Resumen", fileAsString2);
+			DocumentoBase64 doc5 = new DocumentoBase64("EstadoCuenta", fileAsString);
 
 			listDocumentos2.add(doc3);
 			listDocumentos2.add(doc4);
