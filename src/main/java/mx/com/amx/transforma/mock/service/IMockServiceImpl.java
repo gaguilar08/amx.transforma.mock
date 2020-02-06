@@ -256,7 +256,22 @@ public class IMockServiceImpl implements IMockService {
 		FacturasGuardada response = new FacturasGuardada(decoder.toString(), "0", "éxito");
 		return response;
 	}
-
+	
+	@SuppressWarnings("deprecation")
+	public String txtToString() {
+		
+		File reportFile = new File("file1.txt");
+		String fileAsString = null;
+		try {
+			fileAsString = FileUtils.readFileToString(reportFile);
+		} catch (IOException e) {
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return fileAsString;	
+	}
+	
 	@Override
 	public List<IncidenteTecnico> consultaIncidente(RequestBodyIncidente parametro) {
 		List<IncidenteTecnico> listIncidente = new ArrayList<>();

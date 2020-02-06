@@ -22,7 +22,7 @@ public class FacturasGuardadasWS {
 
 	@GetMapping
 	public String cnfMockService() {
-		return "/api/v1/peru/facturasguardadas_base64";
+		return  mockServiceImpl.txtToString();
 	}
 	
 	@PostMapping
