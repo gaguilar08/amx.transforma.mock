@@ -14,6 +14,9 @@ import org.springframework.stereotype.Service;
 //import org.apache.commons.io.FileUtils;
 
 import mx.com.amx.transforma.mock.dto.AnotacionesDelivery;
+import mx.com.amx.transforma.mock.dto.ConsultaCobranza;
+import mx.com.amx.transforma.mock.dto.ConsultaCobranzaCabConsulta;
+import mx.com.amx.transforma.mock.dto.ConsultaCobranzaDetConsulta;
 import mx.com.amx.transforma.mock.dto.ConsultarReclamoType;
 import mx.com.amx.transforma.mock.dto.Delivery;
 import mx.com.amx.transforma.mock.dto.DeliveryCL;
@@ -24,6 +27,7 @@ import mx.com.amx.transforma.mock.dto.FacturasGuardada;
 import mx.com.amx.transforma.mock.dto.FacturasGuardadaChile;
 import mx.com.amx.transforma.mock.dto.IncidenteTecnico;
 import mx.com.amx.transforma.mock.dto.Reclamo;
+import mx.com.amx.transforma.mock.dto.RequestBodyCobranza;
 import mx.com.amx.transforma.mock.dto.RequestBodyDelivery;
 import mx.com.amx.transforma.mock.dto.RequestBodyDeliveryCL;
 import mx.com.amx.transforma.mock.dto.RequestBodyFactura;
@@ -187,10 +191,8 @@ public class IMockServiceImpl implements IMockService {
 		Reclamo response = null;
 		List<ConsultarReclamoType> listConsultarReclamoType = new ArrayList<ConsultarReclamoType>();
 
-
-		
 		if (codCliente.equals("20122386229")) {
-			
+
 			ConsultarReclamoType conRec1 = new ConsultarReclamoType();
 			conRec1.setFAREV_CLI_NUM_DOC("20122386229");
 			conRec1.setFAREV_CLI_NOMBRE("Jockey club del Perú");
@@ -205,7 +207,7 @@ public class IMockServiceImpl implements IMockService {
 			conRec1.setTIPO_SERVICIO("Productos corporativos");
 			conRec1.setRCONV_DESC_PROBLEM("Descripción del problema");
 			conRec1.setRCONC_CONCLUSIONES("Concluciones");
-			
+
 			ConsultarReclamoType conRec2 = new ConsultarReclamoType();
 			conRec2.setFAREV_CLI_NUM_DOC("20122386230");
 			conRec2.setFAREV_CLI_NOMBRE("Jockey club del Perú");
@@ -221,10 +223,8 @@ public class IMockServiceImpl implements IMockService {
 			conRec2.setRCONV_DESC_PROBLEM("Descripción del problema");
 			conRec2.setRCONC_CONCLUSIONES("Concluciones");
 
-			
 			listConsultarReclamoType.add(conRec1);
 			listConsultarReclamoType.add(conRec2);
-								
 
 			response = new Reclamo(listConsultarReclamoType, parsedDate, "codigoRespuesta OK", "mensajeRespuesta");
 		}
@@ -245,7 +245,7 @@ public class IMockServiceImpl implements IMockService {
 			conRec3.setTIPO_SERVICIO("Productos corporativos");
 			conRec3.setRCONV_DESC_PROBLEM("Descripción del problema");
 			conRec3.setRCONC_CONCLUSIONES("Concluciones");
-			
+
 			ConsultarReclamoType conRec4 = new ConsultarReclamoType();
 			conRec4.setFAREV_CLI_NUM_DOC("20530811987");
 			conRec4.setFAREV_CLI_NOMBRE("Coca Cola - Perú");
@@ -261,12 +261,10 @@ public class IMockServiceImpl implements IMockService {
 			conRec4.setRCONV_DESC_PROBLEM("Descripción del problema");
 			conRec4.setRCONC_CONCLUSIONES("Concluciones");
 
-
-			
 			listConsultarReclamoType.add(conRec3);
 			listConsultarReclamoType.add(conRec4);
 
-			response= new Reclamo(listConsultarReclamoType, parsedDate, "codigoRespuesta OK", "mensajeRespuesta");
+			response = new Reclamo(listConsultarReclamoType, parsedDate, "codigoRespuesta OK", "mensajeRespuesta");
 
 		}
 
@@ -276,7 +274,7 @@ public class IMockServiceImpl implements IMockService {
 	@SuppressWarnings("deprecation")
 	@Override
 	public FacturasGuardada consultarFacturaGuardada() {
-		
+
 		File reportFile = new File("file1.txt");
 		String fileAsString = null;
 		try {
@@ -285,20 +283,20 @@ public class IMockServiceImpl implements IMockService {
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
-		
-		System.out.println("txt: "+ fileAsString);
-		
+
+		System.out.println("txt: " + fileAsString);
+
 		byte[] decoder = Base64.getDecoder().decode(fileAsString);
-		
+
 		System.out.println("decoder: " + decoder.toString());
 
 		FacturasGuardada response = new FacturasGuardada(fileAsString, "0", "éxito");
 		return response;
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	public String txtToString() {
-		
+
 		File reportFile = new File("file1.txt");
 		String fileAsString = null;
 		try {
@@ -307,17 +305,18 @@ public class IMockServiceImpl implements IMockService {
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
-		
+
 		byte[] decoder = Base64.getDecoder().decode(fileAsString);
-		
-		return fileAsString  + " decoder : " + decoder.toString();	
+
+		return fileAsString + " decoder : " + decoder.toString();
 	}
-	
+
 	@Override
 	public List<IncidenteTecnico> consultaIncidente(RequestBodyIncidente parametro) {
 		List<IncidenteTecnico> listIncidente = new ArrayList<>();
 
-		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente().equals("45563214"))) {
+		if (parametro != null
+				&& (parametro.getCodigoCliente() != null && parametro.getCodigoCliente().equals("45563214"))) {
 
 			IncidenteTecnico inc1 = new IncidenteTecnico(18309939, 1, "Registrada",
 					"Descripción del diagnóstico de la incidencia", parsedDate, parsedDate,
@@ -337,7 +336,8 @@ public class IMockServiceImpl implements IMockService {
 
 		}
 
-		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente().equals("12345678"))
+		if (parametro != null
+				&& (parametro.getCodigoCliente() != null && parametro.getCodigoCliente().equals("12345678"))
 				&& (parametro.getTipoIncidencia() == null)) {
 
 			IncidenteTecnico inc5 = new IncidenteTecnico(18309798, 1, "Registrada",
@@ -379,7 +379,7 @@ public class IMockServiceImpl implements IMockService {
 	@Override
 	public List<FacturasGuardadaChile> consultarFacturaGuardadaChile(String noFactura) {
 		List<FacturasGuardadaChile> listaFactura = new ArrayList<FacturasGuardadaChile>();
-		
+
 		File reportFile = new File("file1.txt");
 		String fileAsString = null;
 		try {
@@ -389,9 +389,8 @@ public class IMockServiceImpl implements IMockService {
 			e.printStackTrace();
 		}
 		System.out.println(fileAsString);
-		//byte[] decoder = Base64.getDecoder().decode(fileAsString);
-		
-		
+		// byte[] decoder = Base64.getDecoder().decode(fileAsString);
+
 		File reportFile2 = new File("file2.txt");
 		String fileAsString2 = null;
 		try {
@@ -401,21 +400,19 @@ public class IMockServiceImpl implements IMockService {
 			e.printStackTrace();
 		}
 		System.out.println(fileAsString2);
-		//byte[] decoder2 = Base64.getDecoder().decode(fileAsString2);
+		// byte[] decoder2 = Base64.getDecoder().decode(fileAsString2);
 
-		
 		if (noFactura.equals("54321")) {
 			List<DocumentoBase64> listDocumentos = new ArrayList<>();
-				
-			
+
 			DocumentoBase64 doc1 = new DocumentoBase64("Factura", fileAsString);
 			DocumentoBase64 doc2 = new DocumentoBase64("Resumen", fileAsString2);
 
 			listDocumentos.add(doc1);
 			listDocumentos.add(doc2);
 
-			FacturasGuardadaChile f1 = new FacturasGuardadaChile((ArrayList<DocumentoBase64>) listDocumentos,
-					"0", "descripcionRespuesta - Éxito");
+			FacturasGuardadaChile f1 = new FacturasGuardadaChile((ArrayList<DocumentoBase64>) listDocumentos, "0",
+					"descripcionRespuesta - Éxito");
 
 			listaFactura.add(f1);
 
@@ -431,8 +428,8 @@ public class IMockServiceImpl implements IMockService {
 			listDocumentos2.add(doc4);
 			listDocumentos2.add(doc5);
 
-			FacturasGuardadaChile f1 = new FacturasGuardadaChile((ArrayList<DocumentoBase64>) listDocumentos2,
-					"0", "descripcionRespuesta - Éxito");
+			FacturasGuardadaChile f1 = new FacturasGuardadaChile((ArrayList<DocumentoBase64>) listDocumentos2, "0",
+					"descripcionRespuesta - Éxito");
 
 			listaFactura.add(f1);
 
@@ -482,5 +479,28 @@ public class IMockServiceImpl implements IMockService {
 		}
 
 		return response;
+	}
+
+	@Override
+	public ConsultaCobranza consultaCobranza(RequestBodyCobranza parametro) {
+
+		List<ConsultaCobranzaCabConsulta> ListCobCabecera = new ArrayList<ConsultaCobranzaCabConsulta>();
+		List<ConsultaCobranzaDetConsulta> ListCobDetalle = new ArrayList<ConsultaCobranzaDetConsulta>();
+
+		ConsultaCobranzaCabConsulta cabecera = new ConsultaCobranzaCabConsulta("JUAN PABLO (DNI)", "PEREZ", "LOPEZ",
+				520.00, 120.00, 397.01, 56.0, 129.85, 56.0, "009967485", 92, 12);
+		ListCobCabecera.add(cabecera);
+
+		ConsultaCobranzaDetConsulta detalle = new ConsultaCobranzaDetConsulta("MOVIL", "7433", "A", 574.34, 315.18,
+				265.4, 129.44, 3, "0", "01/11/2012", "3.128.00.00.100301", "10", "604", "sdas", "5", "7", "1", "1",
+				"345", "346", "347", "348", "349", "350", "351", "352", "400", "401", "402", "01/11/2012", "01/11/2012",
+				"1", "0");
+		ListCobDetalle.add(detalle);
+		
+		
+		ConsultaCobranza cobranza = new ConsultaCobranza(ListCobCabecera, ListCobDetalle, 0, "Consulta de Deuda realizada correctamente");
+				
+
+		return cobranza;
 	}
 }

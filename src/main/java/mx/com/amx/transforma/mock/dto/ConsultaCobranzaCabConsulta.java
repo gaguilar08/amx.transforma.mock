@@ -1,0 +1,114 @@
+package mx.com.amx.transforma.mock.dto;
+
+public class ConsultaCobranzaCabConsulta {
+	private String NOMBRE_CLIENTE;
+	private String APE_PAT_CLIENTE;
+	private String APE_MAT_CLIENTE;
+	private Double DEUDA_MOVIL;
+	private Double DEUDA_FIJA;
+	private Double DEUDA_VENCIDA_MOVIL;
+	private Double DEUDA_VENCIDA_FIJA;
+	private Double DEUDA_CASTIGADA_MOVIL;
+	private Double DEUDA_CASTIGADA_FIJA;
+	private String DNI_ASOCIADO;
+	private Integer ANTIGÜEDAD_DEUDA;
+	private Integer TOTAL_SERVICIOS;
+	
+	
+	
+	public ConsultaCobranzaCabConsulta(String nOMBRE_CLIENTE, String aPE_PAT_CLIENTE, String aPE_MAT_CLIENTE,
+			Double dEUDA_MOVIL, Double dEUDA_FIJA, Double dEUDA_VENCIDA_MOVIL, Double dEUDA_VENCIDA_FIJA,
+			Double dEUDA_CASTIGADA_MOVIL, Double dEUDA_CASTIGADA_FIJA, String dNI_ASOCIADO, Integer aNTIGÜEDAD_DEUDA,
+			Integer tOTAL_SERVICIOS) {
+		super();
+		NOMBRE_CLIENTE = nOMBRE_CLIENTE;
+		APE_PAT_CLIENTE = aPE_PAT_CLIENTE;
+		APE_MAT_CLIENTE = aPE_MAT_CLIENTE;
+		DEUDA_MOVIL = dEUDA_MOVIL;
+		DEUDA_FIJA = dEUDA_FIJA;
+		DEUDA_VENCIDA_MOVIL = dEUDA_VENCIDA_MOVIL;
+		DEUDA_VENCIDA_FIJA = dEUDA_VENCIDA_FIJA;
+		DEUDA_CASTIGADA_MOVIL = dEUDA_CASTIGADA_MOVIL;
+		DEUDA_CASTIGADA_FIJA = dEUDA_CASTIGADA_FIJA;
+		DNI_ASOCIADO = dNI_ASOCIADO;
+		ANTIGÜEDAD_DEUDA = aNTIGÜEDAD_DEUDA;
+		TOTAL_SERVICIOS = tOTAL_SERVICIOS;
+	}
+	
+	public String getNOMBRE_CLIENTE() {
+		return NOMBRE_CLIENTE;
+	}
+	public void setNOMBRE_CLIENTE(String nOMBRE_CLIENTE) {
+		NOMBRE_CLIENTE = nOMBRE_CLIENTE;
+	}
+	public String getAPE_PAT_CLIENTE() {
+		return APE_PAT_CLIENTE;
+	}
+	public void setAPE_PAT_CLIENTE(String aPE_PAT_CLIENTE) {
+		APE_PAT_CLIENTE = aPE_PAT_CLIENTE;
+	}
+	public String getAPE_MAT_CLIENTE() {
+		return APE_MAT_CLIENTE;
+	}
+	public void setAPE_MAT_CLIENTE(String aPE_MAT_CLIENTE) {
+		APE_MAT_CLIENTE = aPE_MAT_CLIENTE;
+	}
+	public Double getDEUDA_MOVIL() {
+		return DEUDA_MOVIL;
+	}
+	public void setDEUDA_MOVIL(Double dEUDA_MOVIL) {
+		DEUDA_MOVIL = dEUDA_MOVIL;
+	}
+	public Double getDEUDA_FIJA() {
+		return DEUDA_FIJA;
+	}
+	public void setDEUDA_FIJA(Double dEUDA_FIJA) {
+		DEUDA_FIJA = dEUDA_FIJA;
+	}
+	public Double getDEUDA_VENCIDA_MOVIL() {
+		return DEUDA_VENCIDA_MOVIL;
+	}
+	public void setDEUDA_VENCIDA_MOVIL(Double dEUDA_VENCIDA_MOVIL) {
+		DEUDA_VENCIDA_MOVIL = dEUDA_VENCIDA_MOVIL;
+	}
+	public Double getDEUDA_VENCIDA_FIJA() {
+		return DEUDA_VENCIDA_FIJA;
+	}
+	public void setDEUDA_VENCIDA_FIJA(Double dEUDA_VENCIDA_FIJA) {
+		DEUDA_VENCIDA_FIJA = dEUDA_VENCIDA_FIJA;
+	}
+	public Double getDEUDA_CASTIGADA_MOVIL() {
+		return DEUDA_CASTIGADA_MOVIL;
+	}
+	public void setDEUDA_CASTIGADA_MOVIL(Double dEUDA_CASTIGADA_MOVIL) {
+		DEUDA_CASTIGADA_MOVIL = dEUDA_CASTIGADA_MOVIL;
+	}
+	public Double getDEUDA_CASTIGADA_FIJA() {
+		return DEUDA_CASTIGADA_FIJA;
+	}
+	public void setDEUDA_CASTIGADA_FIJA(Double dEUDA_CASTIGADA_FIJA) {
+		DEUDA_CASTIGADA_FIJA = dEUDA_CASTIGADA_FIJA;
+	}
+	public String getDNI_ASOCIADO() {
+		return DNI_ASOCIADO;
+	}
+	public void setDNI_ASOCIADO(String dNI_ASOCIADO) {
+		DNI_ASOCIADO = dNI_ASOCIADO;
+	}
+	public Integer getANTIGÜEDAD_DEUDA() {
+		return ANTIGÜEDAD_DEUDA;
+	}
+	public void setANTIGÜEDAD_DEUDA(Integer aNTIGÜEDAD_DEUDA) {
+		ANTIGÜEDAD_DEUDA = aNTIGÜEDAD_DEUDA;
+	}
+	public Integer getTOTAL_SERVICIOS() {
+		return TOTAL_SERVICIOS;
+	}
+	public void setTOTAL_SERVICIOS(Integer tOTAL_SERVICIOS) {
+		TOTAL_SERVICIOS = tOTAL_SERVICIOS;
+	}
+	
+	
+	
+
+}

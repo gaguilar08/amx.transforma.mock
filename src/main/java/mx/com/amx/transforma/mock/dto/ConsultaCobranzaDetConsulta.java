@@ -1,0 +1,288 @@
+package mx.com.amx.transforma.mock.dto;
+
+public class ConsultaCobranzaDetConsulta {
+	
+	private String TIPO_SERVICIO;
+	private String COD_CUENTA;
+	private String ESTADO_CUENTA;
+	private Double PROMEDIO_FACTURADO;
+	private Double DEUDA_CORRIENTE;
+	private Double DEUDA_VENCIDA;
+	private Double DEUDA_CASTIGADA;
+	private Integer CANT_SERVICIOS;
+	private String IND_CENTRAL_RIESGO;
+	private String FECHA_PROX_VTO;
+	private String COD_CTA_ALTERNA;
+	private String CICLO_FACTURA;
+	private String MONEDA;
+	private String DEUDA_RECLAMADA;
+	private String TOTAL_BLOQUEOS;
+	private String TOTAL_SUSP;
+	private String SALDO_FAVOR;
+	private String NOTA_DEBITO;
+	private String MONTO_RA_X_APLICAR;
+	private String NRO_RA_X_APLICAR;
+	private String MONTO_CVE;
+	private String MONTO_CVE_PAGO;
+	private String MONTO_CVE_PEND;
+	private String NRO_CVE_X_APLICAR;
+	private String MONTO_CUOTA_ALQUIER_DECO;
+	private String FLAG_CARGOENCUENTA;
+	private String MONTO_CARGO_CUENTA;
+	private String MONTO_LDI;
+	private String DEUDA_ACTUAL;
+	private String FECHA_ULTIMA_FACTURA;
+	private String FECHA_ULTIMO_PAGO;
+	private String NOTA_CREDITO;
+	private String FLAG_FINANCIAMIENTO;
+	
+	
+	
+	public ConsultaCobranzaDetConsulta(String tIPO_SERVICIO, String cOD_CUENTA, String eSTADO_CUENTA,
+			Double pROMEDIO_FACTURADO, Double dEUDA_CORRIENTE, Double dEUDA_VENCIDA, Double dEUDA_CASTIGADA,
+			Integer cANT_SERVICIOS, String iND_CENTRAL_RIESGO, String fECHA_PROX_VTO, String cOD_CTA_ALTERNA,
+			String cICLO_FACTURA, String mONEDA, String dEUDA_RECLAMADA, String tOTAL_BLOQUEOS, String tOTAL_SUSP,
+			String sALDO_FAVOR, String nOTA_DEBITO, String mONTO_RA_X_APLICAR, String nRO_RA_X_APLICAR,
+			String mONTO_CVE, String mONTO_CVE_PAGO, String mONTO_CVE_PEND, String nRO_CVE_X_APLICAR,
+			String mONTO_CUOTA_ALQUIER_DECO, String fLAG_CARGOENCUENTA, String mONTO_CARGO_CUENTA, String mONTO_LDI,
+			String dEUDA_ACTUAL, String fECHA_ULTIMA_FACTURA, String fECHA_ULTIMO_PAGO, String nOTA_CREDITO,
+			String fLAG_FINANCIAMIENTO) {
+		super();
+		TIPO_SERVICIO = tIPO_SERVICIO;
+		COD_CUENTA = cOD_CUENTA;
+		ESTADO_CUENTA = eSTADO_CUENTA;
+		PROMEDIO_FACTURADO = pROMEDIO_FACTURADO;
+		DEUDA_CORRIENTE = dEUDA_CORRIENTE;
+		DEUDA_VENCIDA = dEUDA_VENCIDA;
+		DEUDA_CASTIGADA = dEUDA_CASTIGADA;
+		CANT_SERVICIOS = cANT_SERVICIOS;
+		IND_CENTRAL_RIESGO = iND_CENTRAL_RIESGO;
+		FECHA_PROX_VTO = fECHA_PROX_VTO;
+		COD_CTA_ALTERNA = cOD_CTA_ALTERNA;
+		CICLO_FACTURA = cICLO_FACTURA;
+		MONEDA = mONEDA;
+		DEUDA_RECLAMADA = dEUDA_RECLAMADA;
+		TOTAL_BLOQUEOS = tOTAL_BLOQUEOS;
+		TOTAL_SUSP = tOTAL_SUSP;
+		SALDO_FAVOR = sALDO_FAVOR;
+		NOTA_DEBITO = nOTA_DEBITO;
+		MONTO_RA_X_APLICAR = mONTO_RA_X_APLICAR;
+		NRO_RA_X_APLICAR = nRO_RA_X_APLICAR;
+		MONTO_CVE = mONTO_CVE;
+		MONTO_CVE_PAGO = mONTO_CVE_PAGO;
+		MONTO_CVE_PEND = mONTO_CVE_PEND;
+		NRO_CVE_X_APLICAR = nRO_CVE_X_APLICAR;
+		MONTO_CUOTA_ALQUIER_DECO = mONTO_CUOTA_ALQUIER_DECO;
+		FLAG_CARGOENCUENTA = fLAG_CARGOENCUENTA;
+		MONTO_CARGO_CUENTA = mONTO_CARGO_CUENTA;
+		MONTO_LDI = mONTO_LDI;
+		DEUDA_ACTUAL = dEUDA_ACTUAL;
+		FECHA_ULTIMA_FACTURA = fECHA_ULTIMA_FACTURA;
+		FECHA_ULTIMO_PAGO = fECHA_ULTIMO_PAGO;
+		NOTA_CREDITO = nOTA_CREDITO;
+		FLAG_FINANCIAMIENTO = fLAG_FINANCIAMIENTO;
+	}
+	public String getTIPO_SERVICIO() {
+		return TIPO_SERVICIO;
+	}
+	public void setTIPO_SERVICIO(String tIPO_SERVICIO) {
+		TIPO_SERVICIO = tIPO_SERVICIO;
+	}
+	public String getCOD_CUENTA() {
+		return COD_CUENTA;
+	}
+	public void setCOD_CUENTA(String cOD_CUENTA) {
+		COD_CUENTA = cOD_CUENTA;
+	}
+	public String getESTADO_CUENTA() {
+		return ESTADO_CUENTA;
+	}
+	public void setESTADO_CUENTA(String eSTADO_CUENTA) {
+		ESTADO_CUENTA = eSTADO_CUENTA;
+	}
+	public Double getPROMEDIO_FACTURADO() {
+		return PROMEDIO_FACTURADO;
+	}
+	public void setPROMEDIO_FACTURADO(Double pROMEDIO_FACTURADO) {
+		PROMEDIO_FACTURADO = pROMEDIO_FACTURADO;
+	}
+	public Double getDEUDA_CORRIENTE() {
+		return DEUDA_CORRIENTE;
+	}
+	public void setDEUDA_CORRIENTE(Double dEUDA_CORRIENTE) {
+		DEUDA_CORRIENTE = dEUDA_CORRIENTE;
+	}
+	public Double getDEUDA_VENCIDA() {
+		return DEUDA_VENCIDA;
+	}
+	public void setDEUDA_VENCIDA(Double dEUDA_VENCIDA) {
+		DEUDA_VENCIDA = dEUDA_VENCIDA;
+	}
+	public Double getDEUDA_CASTIGADA() {
+		return DEUDA_CASTIGADA;
+	}
+	public void setDEUDA_CASTIGADA(Double dEUDA_CASTIGADA) {
+		DEUDA_CASTIGADA = dEUDA_CASTIGADA;
+	}
+	public Integer getCANT_SERVICIOS() {
+		return CANT_SERVICIOS;
+	}
+	public void setCANT_SERVICIOS(Integer cANT_SERVICIOS) {
+		CANT_SERVICIOS = cANT_SERVICIOS;
+	}
+	public String getIND_CENTRAL_RIESGO() {
+		return IND_CENTRAL_RIESGO;
+	}
+	public void setIND_CENTRAL_RIESGO(String iND_CENTRAL_RIESGO) {
+		IND_CENTRAL_RIESGO = iND_CENTRAL_RIESGO;
+	}
+	public String getFECHA_PROX_VTO() {
+		return FECHA_PROX_VTO;
+	}
+	public void setFECHA_PROX_VTO(String fECHA_PROX_VTO) {
+		FECHA_PROX_VTO = fECHA_PROX_VTO;
+	}
+	public String getCOD_CTA_ALTERNA() {
+		return COD_CTA_ALTERNA;
+	}
+	public void setCOD_CTA_ALTERNA(String cOD_CTA_ALTERNA) {
+		COD_CTA_ALTERNA = cOD_CTA_ALTERNA;
+	}
+	public String getCICLO_FACTURA() {
+		return CICLO_FACTURA;
+	}
+	public void setCICLO_FACTURA(String cICLO_FACTURA) {
+		CICLO_FACTURA = cICLO_FACTURA;
+	}
+	public String getMONEDA() {
+		return MONEDA;
+	}
+	public void setMONEDA(String mONEDA) {
+		MONEDA = mONEDA;
+	}
+	public String getDEUDA_RECLAMADA() {
+		return DEUDA_RECLAMADA;
+	}
+	public void setDEUDA_RECLAMADA(String dEUDA_RECLAMADA) {
+		DEUDA_RECLAMADA = dEUDA_RECLAMADA;
+	}
+	public String getTOTAL_BLOQUEOS() {
+		return TOTAL_BLOQUEOS;
+	}
+	public void setTOTAL_BLOQUEOS(String tOTAL_BLOQUEOS) {
+		TOTAL_BLOQUEOS = tOTAL_BLOQUEOS;
+	}
+	public String getTOTAL_SUSP() {
+		return TOTAL_SUSP;
+	}
+	public void setTOTAL_SUSP(String tOTAL_SUSP) {
+		TOTAL_SUSP = tOTAL_SUSP;
+	}
+	public String getSALDO_FAVOR() {
+		return SALDO_FAVOR;
+	}
+	public void setSALDO_FAVOR(String sALDO_FAVOR) {
+		SALDO_FAVOR = sALDO_FAVOR;
+	}
+	public String getNOTA_DEBITO() {
+		return NOTA_DEBITO;
+	}
+	public void setNOTA_DEBITO(String nOTA_DEBITO) {
+		NOTA_DEBITO = nOTA_DEBITO;
+	}
+	public String getMONTO_RA_X_APLICAR() {
+		return MONTO_RA_X_APLICAR;
+	}
+	public void setMONTO_RA_X_APLICAR(String mONTO_RA_X_APLICAR) {
+		MONTO_RA_X_APLICAR = mONTO_RA_X_APLICAR;
+	}
+	public String getNRO_RA_X_APLICAR() {
+		return NRO_RA_X_APLICAR;
+	}
+	public void setNRO_RA_X_APLICAR(String nRO_RA_X_APLICAR) {
+		NRO_RA_X_APLICAR = nRO_RA_X_APLICAR;
+	}
+	public String getMONTO_CVE() {
+		return MONTO_CVE;
+	}
+	public void setMONTO_CVE(String mONTO_CVE) {
+		MONTO_CVE = mONTO_CVE;
+	}
+	public String getMONTO_CVE_PAGO() {
+		return MONTO_CVE_PAGO;
+	}
+	public void setMONTO_CVE_PAGO(String mONTO_CVE_PAGO) {
+		MONTO_CVE_PAGO = mONTO_CVE_PAGO;
+	}
+	public String getMONTO_CVE_PEND() {
+		return MONTO_CVE_PEND;
+	}
+	public void setMONTO_CVE_PEND(String mONTO_CVE_PEND) {
+		MONTO_CVE_PEND = mONTO_CVE_PEND;
+	}
+	public String getNRO_CVE_X_APLICAR() {
+		return NRO_CVE_X_APLICAR;
+	}
+	public void setNRO_CVE_X_APLICAR(String nRO_CVE_X_APLICAR) {
+		NRO_CVE_X_APLICAR = nRO_CVE_X_APLICAR;
+	}
+	public String getMONTO_CUOTA_ALQUIER_DECO() {
+		return MONTO_CUOTA_ALQUIER_DECO;
+	}
+	public void setMONTO_CUOTA_ALQUIER_DECO(String mONTO_CUOTA_ALQUIER_DECO) {
+		MONTO_CUOTA_ALQUIER_DECO = mONTO_CUOTA_ALQUIER_DECO;
+	}
+	public String getFLAG_CARGOENCUENTA() {
+		return FLAG_CARGOENCUENTA;
+	}
+	public void setFLAG_CARGOENCUENTA(String fLAG_CARGOENCUENTA) {
+		FLAG_CARGOENCUENTA = fLAG_CARGOENCUENTA;
+	}
+	public String getMONTO_CARGO_CUENTA() {
+		return MONTO_CARGO_CUENTA;
+	}
+	public void setMONTO_CARGO_CUENTA(String mONTO_CARGO_CUENTA) {
+		MONTO_CARGO_CUENTA = mONTO_CARGO_CUENTA;
+	}
+	public String getMONTO_LDI() {
+		return MONTO_LDI;
+	}
+	public void setMONTO_LDI(String mONTO_LDI) {
+		MONTO_LDI = mONTO_LDI;
+	}
+	public String getDEUDA_ACTUAL() {
+		return DEUDA_ACTUAL;
+	}
+	public void setDEUDA_ACTUAL(String dEUDA_ACTUAL) {
+		DEUDA_ACTUAL = dEUDA_ACTUAL;
+	}
+	public String getFECHA_ULTIMA_FACTURA() {
+		return FECHA_ULTIMA_FACTURA;
+	}
+	public void setFECHA_ULTIMA_FACTURA(String fECHA_ULTIMA_FACTURA) {
+		FECHA_ULTIMA_FACTURA = fECHA_ULTIMA_FACTURA;
+	}
+	public String getFECHA_ULTIMO_PAGO() {
+		return FECHA_ULTIMO_PAGO;
+	}
+	public void setFECHA_ULTIMO_PAGO(String fECHA_ULTIMO_PAGO) {
+		FECHA_ULTIMO_PAGO = fECHA_ULTIMO_PAGO;
+	}
+	public String getNOTA_CREDITO() {
+		return NOTA_CREDITO;
+	}
+	public void setNOTA_CREDITO(String nOTA_CREDITO) {
+		NOTA_CREDITO = nOTA_CREDITO;
+	}
+	public String getFLAG_FINANCIAMIENTO() {
+		return FLAG_FINANCIAMIENTO;
+	}
+	public void setFLAG_FINANCIAMIENTO(String fLAG_FINANCIAMIENTO) {
+		FLAG_FINANCIAMIENTO = fLAG_FINANCIAMIENTO;
+	}
+	
+	
+	
+
+
+}
