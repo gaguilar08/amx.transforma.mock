@@ -1,6 +1,7 @@
 package mx.com.amx.transforma.mock.dto;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Reclamo {
 	/*
@@ -19,25 +20,25 @@ public class Reclamo {
 	private String conclusiones;
 	*/
 	
-	private ConsultarReclamoType ConsultarReclamoType;
+	private List<ConsultarReclamoType> ConsultarReclamoType;
 	private LocalDate fechaRespuesta;
 	private String codigoRespuesta;
 	private String mensajeRespuesta;
 	
 	
-	
-	public Reclamo(ConsultarReclamoType consultarReclamoType, LocalDate fechaRespuesta, String codigoRespuesta,
-			String mensajeRespuesta) {
+	public Reclamo(List<mx.com.amx.transforma.mock.dto.ConsultarReclamoType> consultarReclamoType,
+			LocalDate fechaRespuesta, String codigoRespuesta, String mensajeRespuesta) {
 		super();
 		ConsultarReclamoType = consultarReclamoType;
 		this.fechaRespuesta = fechaRespuesta;
 		this.codigoRespuesta = codigoRespuesta;
 		this.mensajeRespuesta = mensajeRespuesta;
 	}
-	public ConsultarReclamoType getConsultarReclamoType() {
+	
+	public List<ConsultarReclamoType> getConsultarReclamoType() {
 		return ConsultarReclamoType;
 	}
-	public void setConsultarReclamoType(ConsultarReclamoType consultarReclamoType) {
+	public void setConsultarReclamoType(List<ConsultarReclamoType> consultarReclamoType) {
 		ConsultarReclamoType = consultarReclamoType;
 	}
 	public LocalDate getFechaRespuesta() {
@@ -58,8 +59,4 @@ public class Reclamo {
 	public void setMensajeRespuesta(String mensajeRespuesta) {
 		this.mensajeRespuesta = mensajeRespuesta;
 	}
-	
-	
-
-
 }

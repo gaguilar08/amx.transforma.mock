@@ -24,7 +24,7 @@ public interface IMockService {
 	
 	List<Delivery> buscarSOT(RequestBodyDelivery parametro);
 	
-	List<Reclamo> consultaReclamo(String codCliente);
+	Reclamo consultaReclamo(String codCliente);
 	
 	FacturasGuardada consultarFacturaGuardada();
 

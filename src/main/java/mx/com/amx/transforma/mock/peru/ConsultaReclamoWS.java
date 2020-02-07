@@ -36,18 +36,14 @@ public class ConsultaReclamoWS {
 	}
 
 	@PostMapping
-	public ReclamoResponse cnfMockServicePost(@RequestBody @Valid RequestBodyReclamo parametro) {
-
-		ReclamoResponse response = new ReclamoResponse(null, parsedDate, "0", "OK");
-		response.setCodigoRespuesta("0");
-		response.setEnsajeRespuesta("OK");
-		response.setFechaRespuesta(parsedDate);
+	public Reclamo cnfMockServicePost(@RequestBody @Valid RequestBodyReclamo parametro) {
+		Reclamo reclamo = null;
 		if (parametro != null && (parametro.getCodigoCliente() != null && parametro.getCodigoCliente() != "")) {
-			response.setResponse(mockServiceImpl.consultaReclamo(parametro.getCodigoCliente()));
+			reclamo = mockServiceImpl.consultaReclamo(parametro.getCodigoCliente());
 		}
 
 		System.out.println("IdCliente: " + parametro.getCodigoCliente());
 
-		return response;
+		return reclamo;
 	}
 }

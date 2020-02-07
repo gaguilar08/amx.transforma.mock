@@ -183,19 +183,17 @@ public class IMockServiceImpl implements IMockService {
 	}
 
 	@Override
-	public List<Reclamo> consultaReclamo(String codCliente) {
-		List<Reclamo> listReclamo = new ArrayList<>();
+	public Reclamo consultaReclamo(String codCliente) {
+		Reclamo response = null;
+		List<ConsultarReclamoType> listConsultarReclamoType = new ArrayList<ConsultarReclamoType>();
 
+
+		
 		if (codCliente.equals("20122386229")) {
+			
 			ConsultarReclamoType conRec1 = new ConsultarReclamoType();
-			conRec1.setFAREV_CLI_NOMBRE("20122386229");
+			conRec1.setFAREV_CLI_NUM_DOC("20122386229");
 			conRec1.setFAREV_CLI_NOMBRE("Jockey club del Perú");
-			conRec1.setFAREV_NOMBRES("TI CLARO");
-			conRec1.setFAREV_APELLIDOS("Peru");
-			conRec1.setTIPO_SERVICIO("Productos corporativos");
-			conRec1.setRCONV_DESC_PROBLEM("Descripción del problema");
-			conRec1.setRCONC_CONCLUSIONES("Concluciones");
-			conRec1.setV_CONCMD(14367);
 			conRec1.setFAREV_creacion(parsedDate);
 			conRec1.setFAREV_tipo("SGA");
 			conRec1.setFAREV_clase("PROBLEMA");
@@ -204,37 +202,75 @@ public class IMockServiceImpl implements IMockService {
 			conRec1.setFAREV_fase("Instancia");
 			conRec1.setFAREV_noReclamo("190259325");
 			conRec1.setFAREV_condicion("Cerrado");
-
-			Reclamo re1 = new Reclamo(conRec1, parsedDate, "codigoRespuesta OK", "mensajeRespuesta");
-			listReclamo.add(re1);
-		}
-
-		if (codCliente.equals("20530811001")) {
+			conRec1.setTIPO_SERVICIO("Productos corporativos");
+			conRec1.setRCONV_DESC_PROBLEM("Descripción del problema");
+			conRec1.setRCONC_CONCLUSIONES("Concluciones");
+			
 			ConsultarReclamoType conRec2 = new ConsultarReclamoType();
-
-			conRec2.setFAREV_CLI_NOMBRE("20530811001");
-			conRec2.setFAREV_CLI_NOMBRE("Coca Cola - Perú");
-			conRec2.setFAREV_NOMBRES("TI CLARO");
-			conRec2.setFAREV_APELLIDOS("Peru");
-			conRec2.setTIPO_SERVICIO("Productos corporativos");
-			conRec2.setRCONV_DESC_PROBLEM("Descripción del problema");
-			conRec2.setRCONC_CONCLUSIONES("Concluciones");
-			conRec2.setV_CONCMD(14367);
+			conRec2.setFAREV_CLI_NUM_DOC("20122386230");
+			conRec2.setFAREV_CLI_NOMBRE("Jockey club del Perú");
 			conRec2.setFAREV_creacion(parsedDate);
 			conRec2.setFAREV_tipo("SGA");
 			conRec2.setFAREV_clase("PROBLEMA");
-			conRec2.setFAREV_subclase("Facturación");
-			conRec2.setFAREV_estado("Concluido");
+			conRec2.setFAREV_subclase("Servicio");
+			conRec2.setFAREV_estado("Abierto");
 			conRec2.setFAREV_fase("Instancia");
-			conRec2.setFAREV_noReclamo("190259325");
-			conRec2.setFAREV_condicion("Cerrado");
+			conRec2.setFAREV_noReclamo("190259111");
+			conRec2.setFAREV_condicion("Abierto");
+			conRec2.setTIPO_SERVICIO("Productos corporativos");
+			conRec2.setRCONV_DESC_PROBLEM("Descripción del problema");
+			conRec2.setRCONC_CONCLUSIONES("Concluciones");
 
-			Reclamo re2 = new Reclamo(conRec2, parsedDate, "codigoRespuesta OK", "mensajeRespuesta");
-			listReclamo.add(re2);
+			
+			listConsultarReclamoType.add(conRec1);
+			listConsultarReclamoType.add(conRec2);
+								
+
+			response = new Reclamo(listConsultarReclamoType, parsedDate, "codigoRespuesta OK", "mensajeRespuesta");
+		}
+
+		if (codCliente.equals("20530811001")) {
+			ConsultarReclamoType conRec3 = new ConsultarReclamoType();
+
+			conRec3.setFAREV_CLI_NUM_DOC("20530811001");
+			conRec3.setFAREV_CLI_NOMBRE("Coca Cola - Perú");
+			conRec3.setFAREV_creacion(parsedDate);
+			conRec3.setFAREV_tipo("SGA");
+			conRec3.setFAREV_clase("PROBLEMA");
+			conRec3.setFAREV_subclase("Facturación");
+			conRec3.setFAREV_estado("Concluido");
+			conRec3.setFAREV_fase("Instancia");
+			conRec3.setFAREV_noReclamo("190259325");
+			conRec3.setFAREV_condicion("Cerrado");
+			conRec3.setTIPO_SERVICIO("Productos corporativos");
+			conRec3.setRCONV_DESC_PROBLEM("Descripción del problema");
+			conRec3.setRCONC_CONCLUSIONES("Concluciones");
+			
+			ConsultarReclamoType conRec4 = new ConsultarReclamoType();
+			conRec4.setFAREV_CLI_NUM_DOC("20530811987");
+			conRec4.setFAREV_CLI_NOMBRE("Coca Cola - Perú");
+			conRec4.setFAREV_creacion(parsedDate);
+			conRec4.setFAREV_tipo("SGA");
+			conRec4.setFAREV_clase("PROBLEMA");
+			conRec4.setFAREV_subclase("Facturación");
+			conRec4.setFAREV_estado("Concluido");
+			conRec4.setFAREV_fase("Instancia");
+			conRec4.setFAREV_noReclamo("190259325");
+			conRec4.setFAREV_condicion("Cerrado");
+			conRec4.setTIPO_SERVICIO("Productos corporativos");
+			conRec4.setRCONV_DESC_PROBLEM("Descripción del problema");
+			conRec4.setRCONC_CONCLUSIONES("Concluciones");
+
+
+			
+			listConsultarReclamoType.add(conRec3);
+			listConsultarReclamoType.add(conRec4);
+
+			response= new Reclamo(listConsultarReclamoType, parsedDate, "codigoRespuesta OK", "mensajeRespuesta");
 
 		}
 
-		return listReclamo;
+		return response;
 	}
 
 	@SuppressWarnings("deprecation")
