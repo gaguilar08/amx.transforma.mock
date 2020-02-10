@@ -188,11 +188,11 @@ public class IMockServiceImpl implements IMockService {
 
 	@Override
 	public Reclamo consultaReclamo(String codCliente) {
-		Reclamo response = null;
+		Reclamo response = new Reclamo(null, parsedDate, "codigoRespuesta OK", "mensajeRespuesta");
+		;
 		List<ConsultarReclamoType> listConsultarReclamoType = new ArrayList<ConsultarReclamoType>();
 
 		if (codCliente.equals("20122386229")) {
-
 			ConsultarReclamoType conRec1 = new ConsultarReclamoType();
 			conRec1.setFAREV_CLI_NUM_DOC("20122386229");
 			conRec1.setFAREV_CLI_NOMBRE("Jockey club del Perú");
@@ -226,12 +226,11 @@ public class IMockServiceImpl implements IMockService {
 			listConsultarReclamoType.add(conRec1);
 			listConsultarReclamoType.add(conRec2);
 
-			response = new Reclamo(listConsultarReclamoType, parsedDate, "codigoRespuesta OK", "mensajeRespuesta");
+			response.setConsultarReclamoType(listConsultarReclamoType);
 		}
 
 		if (codCliente.equals("20530811001")) {
 			ConsultarReclamoType conRec3 = new ConsultarReclamoType();
-
 			conRec3.setFAREV_CLI_NUM_DOC("20530811001");
 			conRec3.setFAREV_CLI_NOMBRE("Coca Cola - Perú");
 			conRec3.setFAREV_creacion(parsedDate);
@@ -264,8 +263,7 @@ public class IMockServiceImpl implements IMockService {
 			listConsultarReclamoType.add(conRec3);
 			listConsultarReclamoType.add(conRec4);
 
-			response = new Reclamo(listConsultarReclamoType, parsedDate, "codigoRespuesta OK", "mensajeRespuesta");
-
+			response.setConsultarReclamoType(listConsultarReclamoType);
 		}
 
 		return response;
@@ -496,10 +494,9 @@ public class IMockServiceImpl implements IMockService {
 				"345", "346", "347", "348", "349", "350", "351", "352", "400", "401", "402", "01/11/2012", "01/11/2012",
 				"1", "0");
 		ListCobDetalle.add(detalle);
-		
-		
-		ConsultaCobranza cobranza = new ConsultaCobranza(ListCobCabecera, ListCobDetalle, 0, "Consulta de Deuda realizada correctamente");
-				
+
+		ConsultaCobranza cobranza = new ConsultaCobranza(ListCobCabecera, ListCobDetalle, 0,
+				"Consulta de Deuda realizada correctamente");
 
 		return cobranza;
 	}
