@@ -206,7 +206,7 @@ public class IMockServiceImpl implements IMockService {
 			conRec1.setFAREV_condicion("Cerrado");
 			conRec1.setTIPO_SERVICIO("Productos corporativos");
 			conRec1.setRCONV_DESC_PROBLEM("Descripción del problema");
-			conRec1.setRCONC_CONCLUSIONES("Concluciones");
+			conRec1.setRCONC_CONCLUSIONES("Conclusiones");
 
 			ConsultarReclamoType conRec2 = new ConsultarReclamoType();
 			conRec2.setFAREV_CLI_NUM_DOC("20122386230");
@@ -221,7 +221,7 @@ public class IMockServiceImpl implements IMockService {
 			conRec2.setFAREV_condicion("Abierto");
 			conRec2.setTIPO_SERVICIO("Productos corporativos");
 			conRec2.setRCONV_DESC_PROBLEM("Descripción del problema");
-			conRec2.setRCONC_CONCLUSIONES("Concluciones");
+			conRec2.setRCONC_CONCLUSIONES("Conclusiones");
 
 			listConsultarReclamoType.add(conRec1);
 			listConsultarReclamoType.add(conRec2);
