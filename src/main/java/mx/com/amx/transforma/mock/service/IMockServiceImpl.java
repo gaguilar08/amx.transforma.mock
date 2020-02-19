@@ -197,7 +197,7 @@ public class IMockServiceImpl implements IMockService {
 			conRec1.setFAREV_CLI_NUM_DOC("20122386229");
 			conRec1.setFAREV_CLI_NOMBRE("Jockey club del Perú");
 			conRec1.setFAREV_creacion(parsedDate);
-			conRec1.setFAREV_tipo("SGA");
+			conRec1.setFAREV_tipo("TEST**********");
 			conRec1.setFAREV_clase("PROBLEMA");
 			conRec1.setFAREV_subclase("Facturación");
 			conRec1.setFAREV_estado("Concluido");
